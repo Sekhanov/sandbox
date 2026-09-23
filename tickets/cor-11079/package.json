@@ -1,0 +1,17 @@
+{
+  "name": "trigger-cronjob",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "trigger-cronjob": "tsx trigger-cronjob.ts"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.22.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

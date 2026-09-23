@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: test-cronjob
+  namespace: reporting
+spec:
+  schedule: "*/10 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          imagePullSecrets:
+            - name: artifactory.play.intapp.com
+          containers:
+            - name: test-cronjob
+              image: artifactory.play.intapp.com/reporting-docker-upstreams-dev/library/busybox:1.37.0
+              command:
+                - sh
+                - -c
+                - "echo 'Job started'; sleep 60; echo 'Job finished after 1 minute'"

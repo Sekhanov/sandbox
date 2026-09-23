@@ -1,0 +1,35 @@
+### get index names
+GET http://localhost:9200/_cat/indices/entities?v&h=index&s=index
+
+### get entities by name
+GET http://localhost:9200/entities/_search?pretty
+content-type: application/json
+
+{
+  "query": {
+    "match": {
+      "entity_name": "The Apotheca Sh"
+    }
+  },
+  "_source": ["entity_name"],
+  "size": 10
+}
+
+### analyze edge_ngram tokenization using the index's own analyzer
+POST http://localhost:9200/entities/_analyze?pretty
+Content-Type: application/json
+
+{
+  "analyzer": "edge_ngram_analyzer",
+  "text": "The Apothecary Sho"
+}
+
+### get index settings and mappings
+GET http://localhost:9200/entities?pretty
+
+### list indices with size and doc count
+GET http://localhost:9200/_cat/indices/entities?v&h=index,store.size,docs.count&s=index
+
+
+
+
