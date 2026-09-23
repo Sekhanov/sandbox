@@ -1,0 +1,11 @@
+@AZURE_SPEECH_KEY =
+
+### armenian
+POST https://eastus.tts.speech.microsoft.com/cognitiveservices/v1
+Content-Type: application/ssml+xml
+X-Microsoft-OutputFormat: audio-24khz-48kbitrate-mono-mp3
+Ocp-Apim-Subscription-Key: {{AZURE_SPEECH_KEY}}
+
+<speak version="1.0" xml:lang="hy-AM">
+  <voice name="hy-AM-AnahitNeural">գաղտնի</voice>
+</speak>

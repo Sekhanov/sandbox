@@ -9,10 +9,10 @@
 
 set -euo pipefail
 
-vault_name="reporting13bjqz1801fzkoi"   # dev¡
+vault_name="reporting13bjqz1801fzkoi"   # dev
 #vault_name="reportingl0zm0nnywuu9swv"  # qa
 
-filter="reporting-dev-eastus-multitenant-db"                       # substring to match in secret names
+filter="pendo-service"                       # substring to match in secret names
 query="[?contains(name, '${filter}')].name"
 
 max_attempts=5

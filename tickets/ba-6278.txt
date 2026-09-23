@@ -1,0 +1,24 @@
+sand:
+keyvalue name: reporting77obgbux68teukk
+reporting-sand2-centralus-sisense-clusters-default-url =  https://centralus-sand.reporting.intapp.com
+reporting-sand2-centralus-sisense-clusters-default-user = reporting@intapp.com
+reporting-sand2-centralus-sisense-clusters-default-password = An@lytic5
+reporting-sand2-centralus-sisense-clusters-default-tenant-url-template = https://{tenantAlias}.reporting.intapp.com
+
+reporting-sandbox-centralus-pendo-service-domain = app.pendo.io
+reporting-sandbox-centralus-pendo-service-integration-key = ea54387d-215c-4d2d-60e2-74332c6c6157.us
+reporting-sandbox-centralus-pendo-service-track-event-secret-key = d8c2914b-84e1-485d-7c5d-4d05f3ae54d1
+
+---
+
+prod:
+keyvault name: reportingr9vc9j9nau7rioe
+reporting-prod2-centralus-sisense-clusters-default-url =  https://centralus.reporting.intapp.com
+reporting-prod2-centralus-sisense-clusters-default-user = reporting@intapp.com
+reporting-prod2-centralus-sisense-clusters-default-password = An@lytic5
+reporting-prod2-centralus-sisense-clusters-default-tenant-url-template = https://{tenantAlias}.reporting.intapp.com
+
+
+reporting-prod-centralus-pendo-service-domain = app.pendo.io
+reporting-prod-centralus-pendo-service-integration-key = ea54387d-215c-4d2d-60e2-74332c6c6157.us
+reporting-prod-centralus-pendo-service-track-event-secret-key = d8c2914b-84e1-485d-7c5d-4d05f3ae54d1

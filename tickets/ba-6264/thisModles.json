@@ -1,0 +1,93 @@
+[
+  {
+    "oid": "a6c9a7e0-ebdb-404b-86ad-c2bda42d46eb",
+    "title": "quinnemanuel@open_2026_7_001",
+    "type": "extract",
+    "lastBuildTime": "2026-10-08T03:07:01.647Z",
+    "lastSuccessfulBuildTime": "2026-10-08T03:07:01.647Z",
+    "creator": {
+      "id": "5efe1178b8a9a1689ee144ef",
+      "firstName": "reporting",
+      "lastName": ""
+    },
+    "datasets": null,
+    "shares": [
+      {
+        "partyId": "6863d146b1b2a1002ea03a7f",
+        "type": "group",
+        "permission": "r",
+        "name": "quinnemanuel everyone"
+      },
+      {
+        "partyId": "5efe1178b8a9a1689ee144ef",
+        "type": "user",
+        "permission": "w",
+        "firstName": "reporting",
+        "lastName": "",
+        "email": "reporting@intapp.com"
+      }
+    ]
+  },
+  {
+    "oid": "9194f528-214c-464f-8176-c5e7ae5d7e44",
+    "title": "quinnemanuel@time_2026_3_001",
+    "type": "extract",
+    "lastBuildTime": "2026-10-08T06:04:05.324Z",
+    "lastSuccessfulBuildTime": "2026-10-08T06:04:05.324Z",
+    "creator": {
+      "id": "5efe1178b8a9a1689ee144ef",
+      "firstName": "reporting",
+      "lastName": ""
+    },
+    "datasets": null,
+    "shares": [
+      {
+        "partyId": "6863d146b1b2a1002ea03a7f",
+        "type": "group",
+        "permission": "r",
+        "name": "quinnemanuel everyone"
+      },
+      {
+        "partyId": "5efe1178b8a9a1689ee144ef",
+        "type": "user",
+        "permission": "w",
+        "firstName": "reporting",
+        "lastName": "",
+        "email": "reporting@intapp.com"
+      }
+    ]
+  },
+  {
+    "oid": "2097b53c-b5ab-48c5-a07b-0c7e0d49f809",
+    "title": "quinnemanuel@time-live_2025_1_0",
+    "type": "live",
+    "lastBuildTime": null,
+    "lastSuccessfulBuildTime": null,
+    "creator": {
+      "id": "5efe1178b8a9a1689ee144ef",
+      "firstName": "reporting",
+      "lastName": ""
+    },
+    "datasets": [
+      {
+        "oid": "b222beb8-4bc0-4738-8d69-5356d9847921"
+      }
+    ],
+    "shares": [
+      {
+        "partyId": "6863d146b1b2a1002ea03a7f",
+        "type": "group",
+        "permission": "r",
+        "name": "quinnemanuel everyone"
+      },
+      {
+        "partyId": "5efe1178b8a9a1689ee144ef",
+        "type": "user",
+        "permission": "w",
+        "firstName": "reporting",
+        "lastName": "",
+        "email": "reporting@intapp.com"
+      }
+    ]
+  }
+]

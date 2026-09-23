@@ -1,0 +1,22 @@
+[
+  { "input_string": "apple" },
+  { "input_string": "amazon" },
+  { "input_string": "microsoft" },
+  { "input_string": "walt disney" },
+  { "input_string": "the walt disney" },
+  { "input_string": "goldman" },
+  { "input_string": "alico" },
+  { "input_string": "tesla" },
+  { "input_string": "coca-cola" },
+  { "input_string": "berkshire" },
+  { "input_string": "morgan" },
+  { "input_string": "vanguard" },
+  { "input_string": "netflix" },
+  { "input_string": "amazon web services" },
+  { "input_string": "microsoft corporation" },
+  { "input_string": "tesla inc" },
+  { "input_string": "apple", "entity_type_order": ["COR", "PUB", "PVT"] },
+  { "input_string": "microsoft", "entity_type": ["COR"] },
+  { "input_string": "goldman", "entity_type": ["COR", "PVT"] },
+  { "input_string": "tesla", "entity_type_order": ["PVT", "COR"], "entity_type": ["COR", "PUB"] }
+]

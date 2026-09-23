@@ -1,8 +1,12 @@
+### envvars
+
+@INDEX_NAME = entities
+
 ### get index names
-GET http://localhost:9200/_cat/indices/entities?v&h=index&s=index
+GET http://localhost:9200/_cat/indices/{{INDEX_NAME}}?v&h=index&s=index
 
 ### get entities by name
-GET http://localhost:9200/entities/_search?pretty
+GET http://localhost:9200/{{INDEX_NAME}}/_search?pretty
 content-type: application/json
 
 {
@@ -16,7 +20,7 @@ content-type: application/json
 }
 
 ### analyze edge_ngram tokenization using the index's own analyzer
-POST http://localhost:9200/entities/_analyze?pretty
+POST http://localhost:9200/{{INDEX_NAME}}/_analyze?pretty
 Content-Type: application/json
 
 {
@@ -25,10 +29,10 @@ Content-Type: application/json
 }
 
 ### get index settings and mappings
-GET http://localhost:9200/entities?pretty
+GET http://localhost:9200/{{INDEX_NAME}}?pretty
 
 ### list indices with size and doc count
-GET http://localhost:9200/_cat/indices/entities?v&h=index,store.size,docs.count&s=index
+GET http://localhost:9200/_cat/indices/{{INDEX_NAME}}?v&h=index,store.size,docs.count&s=index
 
 
 
