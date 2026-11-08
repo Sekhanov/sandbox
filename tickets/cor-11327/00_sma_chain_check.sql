@@ -1,31 +1,31 @@
--- Profile the FactSet merge table on the SMA RDS before the export. Read-only.
--- Usage: psql "service=sma_ro" -f 00_sma_chain_check.sql
--- VERIFY: tables resolve through the SMA user's search_path (public), as in compliance-security-master/utils/queries.ts.
-\set ON_ERROR_STOP on
-BEGIN TRANSACTION READ ONLY;
+-- Measures the FactSet merge history on the SMA database. Read-only.
+-- Run each query separately and note the results.
 
-\echo 'Merge table size'
-SELECT count(*)                                 AS merged_ids,
-       count(DISTINCT to_factset_entity_id)     AS surviving_ids,
-       min(merge_date)                          AS first_merge,
-       max(merge_date)                          AS last_merge
+-- 1. Size of the merge table: how many old IDs were merged, into how many surviving IDs, and over which period.
+SELECT count(*)                             AS merged_ids,
+       count(DISTINCT to_factset_entity_id) AS surviving_ids,
+       min(merge_date)                      AS first_merge,
+       max(merge_date)                      AS last_merge
 FROM sym_merged_entity_id;
 
--- > 0 means chains longer than one hop exist; SMA all_entity_ids (one hop) misses them even after the fix.
-\echo 'Merge targets that were merged again'
+-- 2. Merges whose target ID was merged again later (X -> Y, then Y -> Z).
+--    A result above 0 means chains of more than one step exist. The COR-11307 fix still misses them.
 SELECT count(*) AS multi_hop_edges
 FROM sym_merged_entity_id a
 JOIN sym_merged_entity_id b ON b.merged_factset_entity_id = a.to_factset_entity_id;
 
-\echo 'Chain depth and cycles'
+-- 3. Follows every chain to its end: the longest chain, the IDs in chains of more than one step,
+--    and the IDs in a loop (X -> Y -> X, a data error).
 WITH RECURSIVE walk AS (
-    SELECT merged_factset_entity_id::text                    AS start_id,
-           to_factset_entity_id::text                        AS cur_id,
-           1                                                 AS depth,
-           ARRAY[merged_factset_entity_id::text]             AS path,
-           merged_factset_entity_id = to_factset_entity_id   AS is_cycle
+    -- Start: one row per merge.
+    SELECT merged_factset_entity_id::text                  AS start_id,
+           to_factset_entity_id::text                      AS cur_id,
+           1                                               AS depth,
+           ARRAY[merged_factset_entity_id::text]           AS path,
+           merged_factset_entity_id = to_factset_entity_id AS is_cycle
     FROM sym_merged_entity_id
     UNION ALL
+    -- Next step: the current ID was merged again. Stop when an ID repeats (loop).
     SELECT w.start_id,
            m.to_factset_entity_id::text,
            w.depth + 1,
@@ -35,21 +35,18 @@ WITH RECURSIVE walk AS (
     JOIN sym_merged_entity_id m ON m.merged_factset_entity_id = w.cur_id
     WHERE NOT w.is_cycle
 )
-SELECT max(depth)                                         AS max_depth,
-       count(DISTINCT start_id) FILTER (WHERE depth > 1)  AS ids_with_multi_hop_chain,
-       count(DISTINCT start_id) FILTER (WHERE is_cycle)   AS ids_in_cycles
+SELECT max(depth)                                        AS max_depth,
+       count(DISTINCT start_id) FILTER (WHERE depth > 1) AS ids_with_multi_hop_chain,
+       count(DISTINCT start_id) FILTER (WHERE is_cycle)  AS ids_in_cycles
 FROM walk;
 
--- Securities whose own entity_id is already a merged (stale) id.
-\echo 'Stale entity ids on securities'
+-- 4. Securities whose entity ID is itself an old, merged ID (the SMA still returns a retired ID for them).
 SELECT (SELECT count(*) FROM all_securities s
         JOIN sym_merged_entity_id m ON m.merged_factset_entity_id = s.entity_id) AS stale_factset_securities,
        (SELECT count(*) FROM security_info si
         JOIN sym_merged_entity_id m ON m.merged_factset_entity_id = si.cid)      AS stale_custom_securities;
 
-\echo 'Approximate export size for 01 (securities of entities with merged ids)'
+-- 5. Approximate number of rows that script 01 returns: securities of entities that absorbed other IDs.
 SELECT count(*) AS securities_with_merged_entity
 FROM all_securities s
 WHERE s.entity_id IN (SELECT to_factset_entity_id FROM sym_merged_entity_id);
-
-ROLLBACK;
