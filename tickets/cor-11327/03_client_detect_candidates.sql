@@ -44,8 +44,7 @@ CREATE TEMP TABLE ref_sec_hist (
     sma_entity_id        text NOT NULL,
     current_entity_id    text NOT NULL,
     historical_entity_id text NOT NULL,
-    merge_date           date,
-    depth                int  NOT NULL
+    merge_date           date
 );
 CREATE INDEX ON ref_sec_hist (security_id);
 
@@ -110,7 +109,7 @@ cid_restrictions AS (
 -- Trades whose old entity ID has a restriction that was active on the trade date.
 hits AS (
     SELECT t.*,
-           h.sma_entity_id, h.current_entity_id, h.historical_entity_id, h.merge_date, h.depth,
+           h.sma_entity_id, h.current_entity_id, h.historical_entity_id, h.merge_date,
            r.disc_id, r.restriction_list_name, r.disclosure_is_active, r.cid_attribute_is_active, r.list_attribute_is_active
     FROM scan_trades t
     JOIN ref_sec_hist h ON h.security_id = t.security_id
@@ -210,7 +209,7 @@ FROM scan_hits;
 SELECT transaction_id, trade_id, trade_date, processed_at,
        pdl_account_id, right(account_number, 4) AS account_last4,
        symbol, security_name, transaction_type, quantity,
-       security_id, sma_entity_id, current_entity_id, historical_entity_id, depth, merge_date, trade_before_merge,
+       security_id, sma_entity_id, current_entity_id, historical_entity_id, merge_date, trade_before_merge,
        disc_id, restriction_list_name, disclosure_is_active, cid_attribute_is_active, list_attribute_is_active,
        rule_index, action_in, proposed_status, has_attribute_filter, has_auth0_check, first_fired_rule,
        status_would_change, needs_review,

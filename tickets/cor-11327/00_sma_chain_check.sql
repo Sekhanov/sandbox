@@ -12,7 +12,10 @@ FROM sym_merged_entity_id;
 --    A result above 0 means chains of more than one step exist. The COR-11307 fix still misses them.
 SELECT count(*) AS multi_hop_edges
 FROM sym_merged_entity_id a
-JOIN sym_merged_entity_id b ON b.merged_factset_entity_id = a.to_factset_entity_id;
+JOIN sym_merged_entity_id b ON b.merged_factset_entity_id = a.to_factset_entity_id
+-- Self-merges (X -> X) are not real changes.
+WHERE a.merged_factset_entity_id <> a.to_factset_entity_id
+  AND b.merged_factset_entity_id <> b.to_factset_entity_id;
 
 -- 3. Follows every chain to its end: the longest chain, the IDs in chains of more than one step,
 --    and the IDs in a loop (X -> Y -> X, a data error).

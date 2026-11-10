@@ -178,16 +178,15 @@ Use these numbers to decide if the SMA needs the follow-up change, and to estima
 
 An affected security is a security whose company has entity IDs that the SMA did not return. The engine processed the trades of such a security without checking these IDs. A security whose company was never merged has only one ID, so the engine missed nothing for it.
 
-Script `01_sma_export_security_hist_entity.sql` follows each merge chain to its end. It stops if it finds a loop. Then it reads only the securities whose entity ID is part of a merge chain. It does not read the other securities. You save the result as `security_hist_entity.csv`. Each row says: "this security belongs to an entity that also had this old ID."
+Script `01_sma_export_security_hist_entity.sql` takes each single ID change (old ID -> new ID) from the merge table. Chains of changes (old -> new -> newer) are not considered for now. It lists the securities that have one of the two IDs, with the other ID. You save the result as `security_hist_entity.csv`. Each row says: "this security belongs to an entity that also had this other ID."
 
 | Column | Meaning |
 |---|---|
 | `security_id` | The security. |
 | `sma_entity_id` | The entity ID that the SMA returns for the security. Before the fix, the engine checked only this ID. |
-| `current_entity_id` | The ID at the end of the merge chain. |
-| `historical_entity_id` | An old ID of the same entity. The engine did not check this ID before the fix. |
-| `merge_date` | The date when FactSet merged `historical_entity_id`. |
-| `depth` | The number of merge steps from `historical_entity_id` to `current_entity_id`. A value of 0 means that the row is the current ID itself. Such a row exists only when the SMA still returns an old ID for the security. |
+| `current_entity_id` | The new ID of the change. |
+| `historical_entity_id` | The other ID of the change: the old ID, or the new ID when the SMA still returns the old ID for the security. The engine did not check this ID before the fix. |
+| `merge_date` | The date of the change. |
 
 The file holds only FactSet data and no client data. One file serves all clients of the region.
 
@@ -229,7 +228,7 @@ The output file `candidates.csv` has one row for each trade, restriction and rul
 | `transaction_id`, `trade_id`, `trade_date`, `processed_at` | The trade and the time when the engine processed it. |
 | `pdl_account_id`, `account_last4` | The account. The script shows only the last four digits of the account number. |
 | `symbol`, `security_name`, `transaction_type`, `quantity` | What the employee traded. |
-| `security_id`, `sma_entity_id`, `current_entity_id`, `historical_entity_id`, `depth`, `merge_date` | The merge chain (see script `01`). |
+| `security_id`, `sma_entity_id`, `current_entity_id`, `historical_entity_id`, `merge_date` | The ID change (see script `01`). |
 | `trade_before_merge` | `true` if the trade happened before the merge. Before the merge, the restricted company and the traded company were possibly different companies. |
 | `disc_id`, `restriction_list_name` | The restriction that the engine missed and its list. |
 | `disclosure_is_active`, `cid_attribute_is_active`, `list_attribute_is_active` | `false` if somebody deleted the restriction or one of its fields. |
@@ -435,7 +434,7 @@ In these cases, change the scripts as follows:
 1. In script `01`, wrap the final query in `SELECT json_agg(t) FROM (...) t`. Write the result with `\pset format unaligned` and `\pset tuples_only on` to `security_hist_entity.json`.
 2. In script `03`, remove every `CREATE TEMP ...`, `\copy`, `CREATE INDEX`, `ANALYZE` and `INSERT INTO scan_hits` line.
 3. Load the file with ``\set ref `cat security_hist_entity.json` ``. The backticks avoid the size limit of the shell for command arguments.
-4. Write one statement. Its first CTE is `ref_sec_hist AS (SELECT * FROM jsonb_to_recordset(:'ref'::jsonb) AS r(security_id text, sma_entity_id text, current_entity_id text, historical_entity_id text, merge_date date, depth int))`. The next CTEs are the bodies of `scan_trades` and `scan_hits_v`. The final `SELECT` reads from the `scan_hits_v` CTE.
+4. Write one statement. Its first CTE is `ref_sec_hist AS (SELECT * FROM jsonb_to_recordset(:'ref'::jsonb) AS r(security_id text, sma_entity_id text, current_entity_id text, historical_entity_id text, merge_date date))`. The next CTEs are the bodies of `scan_trades` and `scan_hits_v`. The final `SELECT` reads from the `scan_hits_v` CTE.
 
 In this form, the counts query is optional. psql holds the whole file in memory, so look at the export size from script `00` first.
 
