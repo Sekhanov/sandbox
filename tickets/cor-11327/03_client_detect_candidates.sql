@@ -4,7 +4,32 @@
 
 -- Step 1. Load the client rules: replace <CLIENT_RULES_JSON> with the content of client_rules.json (script 02).
 CREATE TEMP TABLE client_rules AS
-SELECT '<CLIENT_RULES_JSON>'::jsonb AS doc;
+SELECT '{
+  "stage": "DEV",
+  "region": "eastus",
+  "client_id": "lkmo",
+  "environment": "AZURE",
+  "restriction_rules": [
+    {
+      "ACTION": {
+        "IN": "PENDING_MATCH_STATUS",
+        "NOT_IN": false
+      },
+      "LIST_NAME": [
+        "Restricted List"
+      ]
+    }
+  ],
+  "trade_status_config": {
+    "MATCH_STATUS": "Matched",
+    "MANAGED_ACCOUNT": "Managed Account",
+    "PRECLR_NOT_NEEDED": "Preclear Not Needed",
+    "PENDING_MATCH_STATUS": "Pending Match"
+  },
+  "trade_config_version": "0669fb94-8042-45c1-a725-3a2d0e82aa15",
+  "trade_config_published": true
+}'::jsonb AS doc;
+-- SELECT '<CLIENT_RULES_JSON>'::jsonb AS doc;
 
 -- Step 2. Check: must return true. False means the rules file belongs to another client DB.
 SELECT EXISTS (

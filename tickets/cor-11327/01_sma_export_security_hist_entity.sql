@@ -1,4 +1,6 @@
--- Lists, for every security, the old entity IDs of its company. Read-only. Runs on the SMA database.
+-- Lists the affected securities and the old entity IDs of their company. Read-only. Runs on the SMA database.
+-- Affected security: its company has entity IDs that the SMA did not return, so the engine processed
+-- its trades without checking them. Securities of companies without merges are not read.
 -- Save the result as security_hist_entity.csv (with a header row). Script 03 loads it for every client of the region.
 -- Output columns:
 --   security_id          the security
@@ -41,10 +43,15 @@ chain AS (
     SELECT DISTINCT current_entity_id, current_entity_id, NULL::date, 0 FROM terminal
 ),
 securities AS (
-    -- FactSet securities and custom securities with their entity. UNION removes duplicate pairs.
-    SELECT fsym_id::text AS security_id, entity_id::text AS entity_id FROM all_securities WHERE entity_id IS NOT NULL
+    -- Affected securities only: FactSet and custom securities whose entity ID is part of a merge chain.
+    -- Other securities have one entity ID, so the engine missed nothing for them. UNION removes duplicate pairs.
+    SELECT fsym_id::text AS security_id, entity_id::text AS entity_id
+    FROM all_securities
+    WHERE entity_id::text IN (SELECT entity_id FROM chain)
     UNION
-    SELECT security_id::text, cid::text FROM security_info WHERE cid IS NOT NULL
+    SELECT security_id::text, cid::text
+    FROM security_info
+    WHERE cid::text IN (SELECT entity_id FROM chain)
 ),
 resolved AS (
     -- The surviving ID of each security (its own entity ID if that was never merged).

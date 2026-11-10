@@ -8,7 +8,8 @@ FROM rulesenginedb.clients_v2 c
 LEFT JOIN rulesenginedb.trade_configs_v2 tc
        ON tc.version = c.trade_config_version   -- the active configuration of the client
       AND lower(tc.client_id) = lower(c.id)
-WHERE lower(c.id) = lower('<CLIENT_ID>');
+WHERE lower(c.id) = lower('lkmo');
+-- WHERE lower(c.id) = lower('<CLIENT_ID>');
 
 -- 2. Export: one JSON document. Save it as client_rules.json. Scripts 03 and 04 use its content.
 SELECT jsonb_pretty(jsonb_build_object(
@@ -24,4 +25,5 @@ FROM rulesenginedb.clients_v2 c
 JOIN rulesenginedb.trade_configs_v2 tc
   ON tc.version = c.trade_config_version
  AND lower(tc.client_id) = lower(c.id)
-WHERE lower(c.id) = lower('<CLIENT_ID>');
+WHERE lower(c.id) = lower('lkmo');
+-- WHERE lower(c.id) = lower('<CLIENT_ID>');

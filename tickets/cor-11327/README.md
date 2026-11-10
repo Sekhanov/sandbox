@@ -174,9 +174,11 @@ Script `00_sma_chain_check.sql` reads the merge table and prints:
 
 Use these numbers to decide if the SMA needs the follow-up change, and to estimate the size of the export.
 
-### Script 01: export the old IDs of each security
+### Script 01: export the affected securities and their old IDs
 
-Script `01_sma_export_security_hist_entity.sql` follows each merge chain to its end. It stops if it finds a loop. Then it joins the result with the securities. It writes the file `security_hist_entity.csv`. Each row says: "this security belongs to an entity that also had this old ID."
+An affected security is a security whose company has entity IDs that the SMA did not return. The engine processed the trades of such a security without checking these IDs. A security whose company was never merged has only one ID, so the engine missed nothing for it.
+
+Script `01_sma_export_security_hist_entity.sql` follows each merge chain to its end. It stops if it finds a loop. Then it reads only the securities whose entity ID is part of a merge chain. It does not read the other securities. You save the result as `security_hist_entity.csv`. Each row says: "this security belongs to an entity that also had this old ID."
 
 | Column | Meaning |
 |---|---|
@@ -204,7 +206,7 @@ First, the script makes sure that the rules file belongs to this client DB. It s
 Then it selects the trades that meet all of these conditions:
 
 1. The restriction check ran for the trade. The `RULE_STATUS` text contains `RESTRICTION_CHECK_`.
-2. The security of the trade is in `security_hist_entity.csv`. This means that the entity of the security has at least one old ID.
+2. The security of the trade is in `security_hist_entity.csv`, so it is an affected security.
 3. A restriction exists on one of the old IDs, and it applied on the trade date (see "When a restriction applies to a trade").
 4. A restriction rule of the client covers the list of that restriction.
 5. The original result did not already name that list in `(On ...)`. If it did, the engine found the restriction anyway, for example through the security ID.
