@@ -11,27 +11,34 @@
 --   depth                merge steps from historical_entity_id to current_entity_id (0 = the current ID itself)
 
 WITH RECURSIVE walk AS (
-    -- Start: every merge "old ID -> new ID" (self-merges skipped).
-    SELECT merged_factset_entity_id::text                                    AS historical_entity_id,
-           to_factset_entity_id::text                                        AS current_entity_id,
-           merge_date,
-           1                                                                 AS depth,
-           ARRAY[merged_factset_entity_id::text, to_factset_entity_id::text] AS path
-    FROM sym_merged_entity_id
-    WHERE merged_factset_entity_id <> to_factset_entity_id
+    -- Start at the surviving IDs: merges "old ID -> new ID" where the new ID was not merged again.
+    -- Walking back from the surviving ID visits each old ID once (walking forward from every
+    -- old ID repeats the same chain for each of its IDs).
+    SELECT m.merged_factset_entity_id::text                                      AS historical_entity_id,
+           m.to_factset_entity_id::text                                          AS current_entity_id,
+           m.merge_date,
+           1                                                                     AS depth,
+           ARRAY[m.to_factset_entity_id::text, m.merged_factset_entity_id::text] AS path
+    FROM sym_merged_entity_id m
+    WHERE m.merged_factset_entity_id <> m.to_factset_entity_id
+      AND NOT EXISTS (
+          SELECT 1 FROM sym_merged_entity_id n
+          WHERE n.merged_factset_entity_id = m.to_factset_entity_id
+            AND n.merged_factset_entity_id <> n.to_factset_entity_id)
     UNION ALL
-    -- Next step: the new ID was merged again. The path array stops loops.
-    SELECT w.historical_entity_id,
-           m.to_factset_entity_id::text,
-           w.merge_date,
+    -- Next step back: an older ID that was merged into the ID found before. The path array stops loops.
+    -- IDs that are only in a loop have no surviving ID and are not listed (script 00 counts them).
+    SELECT m.merged_factset_entity_id::text,
+           w.current_entity_id,
+           m.merge_date,
            w.depth + 1,
-           w.path || m.to_factset_entity_id::text
+           w.path || m.merged_factset_entity_id::text
     FROM walk w
-    JOIN sym_merged_entity_id m ON m.merged_factset_entity_id = w.current_entity_id
-    WHERE m.to_factset_entity_id::text <> ALL (w.path)
+    JOIN sym_merged_entity_id m ON m.to_factset_entity_id = w.historical_entity_id
+    WHERE m.merged_factset_entity_id::text <> ALL (w.path)
 ),
 terminal AS (
-    -- For each old ID, keep the last step: its surviving ID.
+    -- One surviving ID per old ID (an old ID merged into two IDs is a data error: keep the longest chain).
     SELECT DISTINCT ON (historical_entity_id) historical_entity_id, current_entity_id, merge_date, depth
     FROM walk
     ORDER BY historical_entity_id, depth DESC
