@@ -1,0 +1,22 @@
+{
+  "name": "cor-11327-runner",
+  "private": true,
+  "type": "module",
+  "description": "Runs the COR-11327 SQL scripts and saves their results",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "00": "node run.js 00",
+    "01": "node run.js 01",
+    "02": "node run.js 02",
+    "03": "node run.js 03",
+    "04": "node run.js 04",
+    "05": "node run.js 05"
+  },
+  "dependencies": {
+    "csv-stringify": "6.9.0",
+    "pg": "8.13.1",
+    "pg-copy-streams": "7.0.0"
+  }
+}
