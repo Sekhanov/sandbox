@@ -1,4 +1,4 @@
--- Client DB. Undoes script 04 from the backup table. Skips a trade whose status changed after script 04.
+-- Client DB. Undoes script 05 from the backup table. Skips a trade whose status changed after script 05.
 BEGIN;
 
 WITH target AS (

@@ -1,7 +1,7 @@
 -- Client DB, option B. Sets the new status of the approved trades, as the compliance app does: a new active
--- STATUS row and a COMMENT row, the old STATUS row inactive, all recorded in the backup table (for script 05).
+-- STATUS row and a COMMENT row, the old STATUS row inactive, all recorded in the backup table (for script 06).
 -- Inputs: <CLIENT_RULES_JSON> = client_rules.json; temp table approved = approved_status_changes.csv
---         (transaction_id, expected_status, new_status) from the remediable rows of script 03.
+--         (transaction_id, expected_status, new_status) from the remediable rows of script 04.
 BEGIN;
 
 WITH cfg AS (SELECT '<CLIENT_RULES_JSON>'::jsonb AS doc),

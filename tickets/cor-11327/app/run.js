@@ -1,4 +1,4 @@
-// Runs one SQL script and saves each result as CSV.   node run.js <00..05> [--dir <folder>] [--client <id>] [--commit]
+// Runs one SQL script and saves each result as CSV.   node run.js <00..06> [--dir <folder>] [--client <id>] [--fix-date <yyyy-mm-dd>] [--commit]
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
@@ -10,23 +10,24 @@ import { stringify } from 'csv-stringify/sync';
 // Per script: database env prefix (as in the services), input CSV files (temp table -> file), output file.
 const SCRIPTS = {
   '00': { db: 'RDS' },
-  '01': { db: 'RDS', output: 'security_hist_entity.csv' },
-  '02': { db: 'DB', output: 'client_rules.json' },
-  '03': { db: 'CLIENT_DB', output: 'candidates.csv', inputs: { ref_sec_hist: 'security_hist_entity.csv' } },
-  '04': { db: 'CLIENT_DB', inputs: { approved: 'approved_status_changes.csv' } },
-  '05': { db: 'CLIENT_DB' },
+  '01': { db: 'CLIENT_DB', output: 'restricted_cids.csv' },
+  '02': { db: 'RDS', output: 'security_hist_entity.csv', inputs: { restricted_cids: 'restricted_cids.csv' } },
+  '03': { db: 'DB', output: 'client_rules.json' },
+  '04': { db: 'CLIENT_DB', output: 'candidates.csv', inputs: { ref_sec_hist: 'security_hist_entity.csv' } },
+  '05': { db: 'CLIENT_DB', inputs: { approved: 'approved_status_changes.csv' } },
+  '06': { db: 'CLIENT_DB' },
 };
 
 process.loadEnvFile(path.join(import.meta.dirname, '.env'));
-pg.types.setTypeParser(1082, (v) => v); // dates as text
+for (const oid of [1082, 1114]) pg.types.setTypeParser(oid, (v) => v); // date and timestamp as text
 
 const { values: opt, positionals: [name] } = parseArgs({
   allowPositionals: true,
-  options: { dir: { type: 'string', default: path.join(import.meta.dirname, '..', 'out') }, client: { type: 'string' }, commit: { type: 'boolean' } },
+  options: { dir: { type: 'string', default: path.join(import.meta.dirname, '..', 'out') }, client: { type: 'string' }, 'fix-date': { type: 'string' }, commit: { type: 'boolean' } },
 });
 const script = SCRIPTS[name];
 if (!script) {
-  console.error('Usage: npm run <00..05> -- [--dir <folder>] [--client <id>] [--commit]   (default dir: ../out)');
+  console.error('Usage: npm run <00..06> -- [--dir <folder>] [--client <id>] [--fix-date <yyyy-mm-dd>] [--commit]   (default dir: ../out)');
   process.exit(1);
 }
 
@@ -50,6 +51,7 @@ try {
   // Fill in the placeholders and run the whole script. --commit turns the final dry-run ROLLBACK into COMMIT.
   let sql = fs.readFileSync(path.join(sqlDir, sqlFile), 'utf8')
     .replaceAll("'<CLIENT_ID>'", () => db.escapeLiteral(opt.client))
+    .replaceAll("'<FIX_DATE>'", () => db.escapeLiteral(opt['fix-date']))
     .replaceAll("'<CLIENT_RULES_JSON>'", () => db.escapeLiteral(fs.readFileSync(input('client_rules.json'), 'utf8')));
   if (opt.commit) sql = sql.replace(/ROLLBACK;\s*$/, 'COMMIT;');
   const results = [].concat(await db.query(sql)).filter((r) => r.fields.length);

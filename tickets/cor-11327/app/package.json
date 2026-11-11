@@ -12,7 +12,8 @@
     "02": "node run.js 02",
     "03": "node run.js 03",
     "04": "node run.js 04",
-    "05": "node run.js 05"
+    "05": "node run.js 05",
+    "06": "node run.js 06"
   },
   "dependencies": {
     "csv-stringify": "6.9.0",

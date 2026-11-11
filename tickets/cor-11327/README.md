@@ -25,7 +25,7 @@ Scope: only single ID changes (`abc_id -> def_id`). Chains (`abc_id -> def_id ->
 | SMA | The security master service and its database, one per region. |
 | Central DB | `rulesenginedb`: the configuration of all clients. |
 | Client DB | The database of one client: its trades and restrictions. |
-| Restriction rule | Client configuration: which restriction lists to check, and which status to set on a hit (`ACTION.IN`). |
+| Restriction rule | Client configuration: which restriction lists to check, the status on a hit (`ACTION.IN`) and the status when not on the list (`ACTION.NOT_IN`, allow-lists). |
 | CNG / SP ticket | Change ticket for production / ticket for access rights. |
 
 ## How the engine records a result
@@ -38,42 +38,60 @@ The engine writes each trade to the client DB: `bk_txn` (the trade) and typed ro
 
 There is no separate exception record. The rules run in order; the first rule with a hit and an action sets the status. After that, the SIC check can change the status, and a preclear match changes `Pending Match` to `Matched`.
 
-A restriction applies on the trade date when it had an `Active` status row by the end of that day and was not set `Cleared` or `Inactive` before it. The engine ignores the `is_active` flag, so deleted restrictions still apply. The scripts do the same and show the flags.
+The engine finds a restriction by its `SECURITY_ID` or `CID` rows, including inactive rows. A restriction applies on the trade date when it had an `Active` status row by the end of that day and was not set `Cleared` or `Inactive` before it.
+
+What the compliance app does with restrictions:
+- **Delete:** hard delete; a copy goes to `migdb.deleted_disclosures` / `migdb.deleted_attribute_extra`, without a deletion time.
+- **Clear:** adds a `Cleared` status row.
+- **Edit:** sets the old row inactive and adds a new one.
+- **Merge (since 2026-04-21):** rewrites the restriction CID from the old to the new ID. The engine then finds it by either ID, so trades processed after that are not affected.
 
 ## The scripts
 
 | Script | Database | What it does | Output |
 |---|---|---|---|
 | `00` | SMA | Counts the merges and the chains (must be 0: only single changes are covered). | counts |
-| `01` | SMA | Affected securities: entity ID is one side of a change, with the other ID. Once per region, no client data. | `security_hist_entity.csv` |
-| `02` | Central | The client's restriction rules and status names. No row: unknown client. | `client_rules.json` |
-| `03` | Client | Trades where a restriction on the other ID applied, a rule covers its list, and the engine result did not name it. Read-only. | `candidates.csv` |
-| `04` | Client | Option B: sets the new status of the approved trades, with a comment row and a backup. | approved trades, `applied` |
-| `05` | Client | Undoes `04` from the backup table. | changed trades, `rolled_back` |
+| `01` | Client | Every CID the client's restrictions ever had (live, inactive, deleted). Also a format check. | `restricted_cids.csv` |
+| `02` | SMA | Securities whose other entity ID (one change) is a restricted CID. | `security_hist_entity.csv` |
+| `03` | Central | The client's restriction rules, SIC rules and status names. No row: unknown client. | `client_rules.json` |
+| `04` | Client | Trades processed before the fix where the engine missed a restriction on the other ID. Read-only. | `candidates.csv` |
+| `05` | Client | Option B: sets the new status of the approved trades, with a comment row and a backup. | approved trades, `applied` |
+| `06` | Client | Undoes `05` from the backup table. | changed trades, `rolled_back` |
 
-Placeholders: `<CLIENT_ID>` (`02`), `<CLIENT_RULES_JSON>` (`03`, `04`: the content of `client_rules.json`). Input CSV files are temp tables with text columns. `04` and `05` end with `ROLLBACK` (dry run).
+Placeholders: `<CLIENT_ID>` (`03`), `<FIX_DATE>` (`04`), `<CLIENT_RULES_JSON>` (`04`, `05`: the content of `client_rules.json`). Input CSV files are temp tables with text columns. `05` and `06` end with `ROLLBACK` (dry run).
 
 ### Main columns of `candidates.csv` (one row per trade)
 
 | Column | Meaning |
 |---|---|
 | `transaction_id`, `trade_date`, `account_last4`, `symbol`, `quantity` | The trade (last 4 digits of the account only). |
-| `historical_entity_id`, `merge_date` | The ID the engine missed and the date of the change. |
+| `engine_entity_id`, `historical_entity_id`, `merge_date` | The ID the engine checked, the ID it missed, the date of the change. |
+| `processed_at` | When the engine wrote its result (`RULE_STATUS` row). |
 | `disc_id`, `restriction_list_name` | The missed restriction. |
-| `rule_index`, `proposed_status` | The first rule that covers the list and the status it sets. |
-| `current_status`, `status_would_change` | Today's status; `true` if the missed restriction changes it. |
-| `needs_review` | A person must decide: employee filter on the rule, preclear match, trade before the merge, or deleted restriction. |
-| `remediable` | `status_would_change` and not `needs_review`. Only these rows may go to script `04`. |
+| `rule_index`, `proposed_status` | The first rule that would have changed the result, and its `IN` status (empty for a wrongly fired `NOT_IN` rule). |
+| `current_status` | Today's status. |
+| `review_reason` | Why a person must decide (list below). Empty: the change is certain. |
+| `remediable` | Has a proposed status, it differs from today's, and no `review_reason`. Only these rows may go to script `05`. |
+
+`review_reason` values:
+- `employee_filter`: the rule has `AUTH0_CHECK_RULE` or `ATTRIBUTE_TYPE`.
+- `preclear_linked`: a preclear link or `Matched`.
+- `status_changed_by_user`: more than one `STATUS` row.
+- `pending_match_action`: the rule sets `Pending Match`, so the preclear match would have decided.
+- `sic_rules`: the client has SIC rules, which can overwrite the status.
+- `not_in_rule`: an allow-list rule fired because the restriction was not found; the correct status is unknown.
+- `deleted_restriction`: its end date is unknown.
+- `trade_before_merge`.
 
 ## How to correct the trades
 
 - **Option A, run the engine again** (`POST v2/process-trade?readOnly=true`): shows today's decision only, cannot correct a trade, exists on AWS only. Use it as a cross-check.
-- **Option B, change the status** (scripts `04`, `05`): adds a new `STATUS` row and a `COMMENT` row, sets the old row inactive, as the compliance app does. Needs client approval and a CNG per client. It does not repeat the SIC check.
+- **Option B, change the status** (scripts `05`, `06`): adds a new `STATUS` row and a `COMMENT` row, sets the old row inactive, as the compliance app does. Needs client approval and a CNG per client. It does not repeat the SIC check.
 - **Option C, report only**: the support team sends `candidates.csv` to the compliance officers, who decide in the app.
 
 Recommendation: C for all clients; B only for the trades a client approved; A as a cross-check on AWS.
 
-Script `04` skips a trade when its status changed since the review, it has more than one active status, it has a preclear link, or it was already changed. It locks the rows it changes. Script `05` skips a trade whose status changed after script `04`.
+Script `05` skips a trade when its status changed since the review, it has more than one active status, it has a preclear link, or it was already changed. It locks the rows it changes. Script `06` skips a trade whose status changed after script `05`.
 
 ## Runbook
 
@@ -87,30 +105,31 @@ cp .env.example .env    # fill in RDS_*, DB_*, CLIENT_DB_* (same names as in the
 umask 077               # output files hold employee trade data
 ```
 
-`.env` holds the connections and is in `.gitignore`: `RDS_*` = SMA (compliance-security-master), `DB_*` = central, `CLIENT_DB_*` = client DB (compliance-rules-engine). An empty `*_PASSWORD` falls back to `~/.pgpass`. A variable set in the shell overrides `.env`, for example `CLIENT_DB_HOST=... npm run 03 -- --dir ...` for another client.
+`.env` holds the connections and is in `.gitignore`: `RDS_*` = SMA (compliance-security-master), `DB_*` = central, `CLIENT_DB_*` = client DB (compliance-rules-engine). An empty `*_PASSWORD` falls back to `~/.pgpass`. A variable set in the shell overrides `.env`, for example `CLIENT_DB_HOST=... npm run 04 -- --dir ...` for another client.
 
 ### Steps
 
 Run one script at a time. Each run prints every result (first 20 rows) and saves it to `<dir>/steps/<script>.<n>.csv`.
 
 ```zsh
-npm run 00 -- --dir ../out/eu                       # counts
-npm run 01 -- --dir ../out/eu                       # out/eu/security_hist_entity.csv
-npm run 02 -- --dir ../out/eu/ACME --client ACME    # out/eu/ACME/client_rules.json
-npm run 03 -- --dir ../out/eu/ACME                  # candidates.csv
+npm run 00 -- --dir ../out/eu                              # counts
+npm run 01 -- --dir ../out/eu/ACME                         # restricted_cids.csv; check bad_format = 0
+npm run 02 -- --dir ../out/eu/ACME                         # security_hist_entity.csv
+npm run 03 -- --dir ../out/eu/ACME --client ACME           # client_rules.json
+npm run 04 -- --dir ../out/eu/ACME --fix-date 2026-10-14   # candidates.csv
 ```
 
-Script `03` finds `security_hist_entity.csv` in its folder or the parent folder. Send `candidates.csv` to the compliance officers on an approved secure channel.
+`--fix-date` is the date the fix was deployed in that region. Send `candidates.csv` to the compliance officers on an approved secure channel.
 
 For option B (under CNG 2):
 
 1. The officers return `approved_status_changes.csv` with the columns `transaction_id, expected_status, new_status` (from `candidates.csv` rows with `remediable = true`: `current_status`, `proposed_status`).
 2. A DBA creates the backup table (below).
-3. `npm run 04 -- --dir ../out/eu/ACME`: dry run. Check the `applied` column; `false` means skipped.
-4. `npm run 04 -- --dir ../out/eu/ACME --commit`: applies the changes.
+3. `npm run 05 -- --dir ../out/eu/ACME`: dry run. Check the `applied` column; `false` means skipped.
+4. `npm run 05 -- --dir ../out/eu/ACME --commit`: applies the changes.
 5. Ask the operations team for the cache refresh: `GET <ADMIN_PORTAL_BASE_URL>/pdl/secured/config/cat/RELOAD_CACHE_EXTERNAL?cacheToUpdate=PERSONAL_TRADE` with the `apiKey` header.
 
-Rollback: `npm run 05 -- --dir ../out/eu/ACME`, then with `--commit`, then the cache refresh.
+Rollback: `npm run 06 -- --dir ../out/eu/ACME`, then with `--commit`, then the cache refresh.
 
 Without the app, run the scripts in a DB tool: import the input CSV files as temp tables and replace the placeholders.
 
@@ -130,14 +149,14 @@ CREATE TABLE public.remediation_cor11327_status_backup (
 GRANT SELECT, INSERT, UPDATE ON public.remediation_cor11327_status_backup TO <remediation_role>;
 ```
 
-The role also needs: `SELECT` on `bk_txn`, `bk_txn_extra_types`, `userdb.users`; `SELECT, INSERT, UPDATE` (and `DELETE` for `05`) on `bk_txn_extra`; `USAGE` on the schemas `public`, `userdb` and on the `extra_id` sequence; `TEMP` on the database.
+The role also needs: `SELECT` on `bk_txn`, `migdb.deleted_disclosures`, `migdb.deleted_attribute_extra`, `bk_txn_extra_types`, `userdb.users`; `SELECT, INSERT, UPDATE` (and `DELETE` for `06`) on `bk_txn_extra`; `USAGE` on the schemas `public`, `userdb` and on the `extra_id` sequence; `TEMP` on the database.
 
 ## Tickets
 
 1. SP: read access to the SMA (each region), the central DB and the client DBs in scope, with `TEMP` on the client DBs.
 2. CNG 1: the read-only search (scripts `00`–`03`).
 3. Secure hand-off of `candidates.csv` to the compliance officers.
-4. CNG 2 per client with option B: backup table and role, script `04` with the dry-run output, rollback with `05`, cache refresh.
+4. CNG 2 per client with option B: backup table and role, script `05` with the dry-run output, rollback with `06`, cache refresh.
 5. CNG 3: drop the backup table after the retention period; delete the `out/` folders.
 6. Development follow-ups: SMA `all_entity_ids` to follow full chains (if script `00` finds any); holdings have no restriction check; the US government check uses only the current entity ID; a read-only engine call on Azure.
 
@@ -146,12 +165,13 @@ The role also needs: `SELECT` on `bk_txn`, `bk_txn_extra_types`, `userdb.users`;
 Limits of the search:
 
 - Chains of ID changes are not covered.
-- Script `03` does not repeat the SIC check and uses today's configuration.
+- SMA keeps only the current `entity_id` of a security. `engine_entity_id` is today's ID, not necessarily the one the engine checked. A security that moved to a new ID after the trade, with the restriction on the new ID, is not found.
+- Script `04` uses today's rule configuration. I found no history of which rule version was active when.
+- `processed_at` is the `created_date` of the `RULE_STATUS` row (assumed to be the processing time).
 - It does not see trades without `RULE_STATUS` (older loaders) or trades that exist only in the central table `brokerdb.trade_data`.
 - List names that contain `,` or `)` break the "already matched" check.
-- A rule whose earlier `NOT_IN` action fired can hide a later rule (rare; the row still appears).
-- A trade with a preclear link where the missed rule sets `Pending Match` shows `status_would_change = true`, although the preclear would still match. It is `needs_review`, and script `04` skips it.
-- Script `04` does not change the `RULE_STATUS` copy in `brokerdb.trade_data`, and leaves `created_date` to the column default.
+- `MERGED_CID` in `entity_info_extra` exists only since 2026-08-26 and may cover only local entities; the scripts use SMA merges.
+- Script `05` does not change the `RULE_STATUS` copy in `brokerdb.trade_data`, and leaves `created_date` to the column default.
 
 To confirm before the run:
 
@@ -159,11 +179,13 @@ To confirm before the run:
 2. `pdl_client_code` equals the client ID (renamed clients fail the check).
 3. Older engine versions write the same `RULE_STATUS` text.
 4. Every client DB has the `COMMENT` type in `bk_txn_extra_types`.
-5. No trigger or foreign key on `bk_txn_extra` blocks scripts `04` and `05`.
+5. No trigger or foreign key on `bk_txn_extra` blocks scripts `05` and `06`.
 6. The `PERSONAL_TRADE` cache refresh is enough after a direct change (or the OpenSearch sync is also needed), and whether it refreshes one client or all.
 7. The production tables match the seed scripts.
 8. Whether the compliance app creates an action item for a restricted trade (COR-11307 expects one). If yes, option B must create it too.
 9. Which clients run on AWS and which on Azure, and the deploy date of the fix per region.
+10. `migdb.deleted_*` exists and is filled on every client DB.
+11. Whether a merge reaches the compliance app automatically or only by hand (the `SECURITY_MAINTENANCE` disclosure with `STATUS = Merge`).
 
 ## Code references
 
