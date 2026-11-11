@@ -1,4 +1,4 @@
-// Runs one SQL script and saves each result as CSV.   node run.js <00..05> --dir <folder> [--client <id>] [--commit]
+// Runs one SQL script and saves each result as CSV.   node run.js <00..05> [--dir <folder>] [--client <id>] [--commit]
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
@@ -7,14 +7,14 @@ import pg from 'pg';
 import { from as copyFrom } from 'pg-copy-streams';
 import { stringify } from 'csv-stringify/sync';
 
-// Per script: database, input CSV files (temp table -> file), output file.
+// Per script: database env prefix (as in the services), input CSV files (temp table -> file), output file.
 const SCRIPTS = {
-  '00': { db: 'SMA_DB_URL' },
-  '01': { db: 'SMA_DB_URL', output: 'security_hist_entity.csv' },
-  '02': { db: 'CENTRAL_DB_URL', output: 'client_rules.json' },
-  '03': { db: 'CLIENT_DB_URL', output: 'candidates.csv', inputs: { ref_sec_hist: 'security_hist_entity.csv' } },
-  '04': { db: 'CLIENT_DB_URL', inputs: { approved: 'approved_status_changes.csv' } },
-  '05': { db: 'CLIENT_DB_URL' },
+  '00': { db: 'RDS' },
+  '01': { db: 'RDS', output: 'security_hist_entity.csv' },
+  '02': { db: 'DB', output: 'client_rules.json' },
+  '03': { db: 'CLIENT_DB', output: 'candidates.csv', inputs: { ref_sec_hist: 'security_hist_entity.csv' } },
+  '04': { db: 'CLIENT_DB', inputs: { approved: 'approved_status_changes.csv' } },
+  '05': { db: 'CLIENT_DB' },
 };
 
 process.loadEnvFile(path.join(import.meta.dirname, '.env'));
@@ -22,10 +22,13 @@ pg.types.setTypeParser(1082, (v) => v); // dates as text
 
 const { values: opt, positionals: [name] } = parseArgs({
   allowPositionals: true,
-  options: { dir: { type: 'string' }, client: { type: 'string' }, commit: { type: 'boolean' } },
+  options: { dir: { type: 'string', default: path.join(import.meta.dirname, '..', 'out') }, client: { type: 'string' }, commit: { type: 'boolean' } },
 });
 const script = SCRIPTS[name];
-if (!script || !opt.dir) throw new Error('Usage: node run.js <00..05> --dir <folder> [--client <id>] [--commit]');
+if (!script) {
+  console.error('Usage: npm run <00..05> -- [--dir <folder>] [--client <id>] [--commit]   (default dir: ../out)');
+  process.exit(1);
+}
 
 const sqlDir = path.join(import.meta.dirname, '..');
 const sqlFile = fs.readdirSync(sqlDir).find((f) => f.startsWith(`${name}_`));
@@ -33,7 +36,8 @@ const input = (file) => [path.join(opt.dir, file), path.join(opt.dir, '..', file
 const csv = (r) => stringify(r.rows, { header: true, columns: r.fields.map((f) => f.name), cast: { boolean: String, object: JSON.stringify } });
 fs.mkdirSync(path.join(opt.dir, 'steps'), { recursive: true });
 
-const db = new pg.Client({ connectionString: process.env[script.db] });
+const env = (key) => process.env[`${script.db}_${key}`];
+const db = new pg.Client({ host: env('HOST'), port: env('PORT'), database: env('DATABASE') ?? env('NAME'), user: env('USERNAME'), password: env('PASSWORD') });
 await db.connect();
 try {
   // Input CSV files -> temp tables with text columns named after the header row.

@@ -83,11 +83,11 @@ The app in `app/run.js` loads the input CSV files into temp tables, fills in the
 
 ```zsh
 cd app && npm ci        # Node 20.12+; libraries: pg, pg-copy-streams, csv-stringify
-cp .env.example .env    # fill in SMA_DB_URL, CENTRAL_DB_URL, CLIENT_DB_URL
+cp .env.example .env    # fill in RDS_*, DB_*, CLIENT_DB_* (same names as in the services)
 umask 077               # output files hold employee trade data
 ```
 
-`.env` holds the connection strings; it is in `.gitignore`. Keep passwords in `~/.pgpass` (mode 600), not in `.env`. A variable set in the shell overrides `.env`, for example `CLIENT_DB_URL=... npm run 03 -- --dir ...` for another client.
+`.env` holds the connections and is in `.gitignore`: `RDS_*` = SMA (compliance-security-master), `DB_*` = central, `CLIENT_DB_*` = client DB (compliance-rules-engine). An empty `*_PASSWORD` falls back to `~/.pgpass`. A variable set in the shell overrides `.env`, for example `CLIENT_DB_HOST=... npm run 03 -- --dir ...` for another client.
 
 ### Steps
 
