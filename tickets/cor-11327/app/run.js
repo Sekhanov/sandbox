@@ -33,7 +33,6 @@ if (!script) {
 
 const sqlDir = path.join(import.meta.dirname, '..');
 const sqlFile = fs.readdirSync(sqlDir).find((f) => f.startsWith(`${name}_`));
-const input = (file) => [path.join(opt.dir, file), path.join(opt.dir, '..', file)].find(fs.existsSync); // folder or parent
 const csv = (r) => stringify(r.rows, { header: true, columns: r.fields.map((f) => f.name), cast: { boolean: String, object: JSON.stringify } });
 fs.mkdirSync(path.join(opt.dir, 'steps'), { recursive: true });
 
@@ -43,16 +42,16 @@ await db.connect();
 try {
   // Input CSV files -> temp tables with text columns named after the header row.
   for (const [table, file] of Object.entries(script.inputs ?? {})) {
-    const header = fs.readFileSync(input(file), 'utf8').split(/\r?\n/)[0].split(',');
+    const header = fs.readFileSync(path.join(opt.dir, file), 'utf8').split(/\r?\n/)[0].split(',');
     await db.query(`CREATE TEMP TABLE ${table} (${header.map((c) => `${db.escapeIdentifier(c.trim())} text`).join(', ')})`);
-    await pipeline(fs.createReadStream(input(file)), db.query(copyFrom(`COPY ${table} FROM STDIN (FORMAT csv, HEADER)`)));
+    await pipeline(fs.createReadStream(path.join(opt.dir, file)), db.query(copyFrom(`COPY ${table} FROM STDIN (FORMAT csv, HEADER)`)));
   }
 
   // Fill in the placeholders and run the whole script. --commit turns the final dry-run ROLLBACK into COMMIT.
   let sql = fs.readFileSync(path.join(sqlDir, sqlFile), 'utf8')
     .replaceAll("'<CLIENT_ID>'", () => db.escapeLiteral(opt.client))
     .replaceAll("'<FIX_DATE>'", () => db.escapeLiteral(opt['fix-date']))
-    .replaceAll("'<CLIENT_RULES_JSON>'", () => db.escapeLiteral(fs.readFileSync(input('client_rules.json'), 'utf8')));
+    .replaceAll("'<CLIENT_RULES_JSON>'", () => db.escapeLiteral(fs.readFileSync(path.join(opt.dir, 'client_rules.json'), 'utf8')));
   if (opt.commit) sql = sql.replace(/ROLLBACK;\s*$/, 'COMMIT;');
   const results = [].concat(await db.query(sql)).filter((r) => r.fields.length);
 

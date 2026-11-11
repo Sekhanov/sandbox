@@ -50,8 +50,8 @@ What the compliance app does with restrictions:
 
 | Script | Database | What it does | Output |
 |---|---|---|---|
-| `00` | SMA | Counts the merges and the chains (must be 0: only single changes are covered). | counts |
-| `01` | Client | Every CID the client's restrictions ever had (live, inactive, deleted). Also a format check. | `restricted_cids.csv` |
+| `00` | SMA | Counts the chains of ID changes (must be 0: only single changes are covered). | count |
+| `01` | Client | Every CID the client's restrictions ever had (live, inactive, deleted), with a `bad_format` flag. | `restricted_cids.csv` |
 | `02` | SMA | Securities whose other entity ID (one change) is a restricted CID. | `security_hist_entity.csv` |
 | `03` | Central | The client's restriction rules, SIC rules and status names. No row: unknown client. | `client_rules.json` |
 | `04` | Client | Trades processed before the fix where the engine missed a restriction on the other ID. Read-only. | `candidates.csv` |
@@ -112,8 +112,8 @@ umask 077               # output files hold employee trade data
 Run one script at a time. Each run prints every result (first 20 rows) and saves it to `<dir>/steps/<script>.<n>.csv`.
 
 ```zsh
-npm run 00 -- --dir ../out/eu                              # counts
-npm run 01 -- --dir ../out/eu/ACME                         # restricted_cids.csv; check bad_format = 0
+npm run 00 -- --dir ../out/eu                              # chained_changes = 0
+npm run 01 -- --dir ../out/eu/ACME                         # restricted_cids.csv; bad_format rows come first
 npm run 02 -- --dir ../out/eu/ACME                         # security_hist_entity.csv
 npm run 03 -- --dir ../out/eu/ACME --client ACME           # client_rules.json
 npm run 04 -- --dir ../out/eu/ACME --fix-date 2026-10-14   # candidates.csv
