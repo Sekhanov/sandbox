@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "csv-stringify": "6.9.0",
-    "pg": "8.13.1",
-    "pg-copy-streams": "7.0.0"
+    "pg": "8.13.1"
   }
 }

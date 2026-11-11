@@ -1,7 +1,10 @@
--- Client DB, read-only. Trades processed before the fix that missed a restriction on the other entity ID of their security.
--- Inputs: <CLIENT_RULES_JSON> = client_rules.json; <FIX_DATE> = fix deploy date; temp table ref_sec_hist = security_hist_entity.csv.
--- One row per trade (the first rule that would have changed the result). Rows with remediable = true can go to script 05.
-WITH cfg AS (SELECT '<CLIENT_RULES_JSON>'::jsonb AS doc),
+-- Client DB, read-only. Inputs: client_rules.json, security_hist_entity.json, --fix-date. Output: candidates.csv.
+-- Trades processed before the fix that missed a restriction on the other entity ID of their security.
+-- One row per trade; remediable = true means safe to fix with 05, otherwise review_reason says why not.
+WITH cfg AS (  -- input files as rows
+    SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
+ref_sec_hist AS (SELECT * FROM jsonb_to_recordset(current_setting('cor11327.security_hist_entity')::jsonb)
+                 AS x(security_id text, historical_entity_id text, engine_entity_id text, merge_date text)),
 rules AS (  -- client rules in engine order: list name patterns and the status an IN hit sets
     SELECT r.ord AS rule_index,
            ARRAY(SELECT jsonb_array_elements_text(CASE jsonb_typeof(r.rule -> 'LIST_NAME')
@@ -32,7 +35,7 @@ trades AS (  -- client trades of affected securities that went through the restr
     JOIN extra sec ON sec.transaction_id = bt.transaction_id AND sec.attribute_type = 'SECURITY_ID'
     JOIN ref_sec_hist h ON h.security_id = sec.attribute_value
     JOIN extra rs ON rs.transaction_id = bt.transaction_id AND rs.attribute_type = 'RULE_STATUS'
-                 AND rs.attribute_value LIKE '%RESTRICTION_CHECK_%' AND rs.created_date < '<FIX_DATE>'::date
+                 AND rs.attribute_value LIKE '%RESTRICTION_CHECK_%' AND rs.created_date < current_setting('cor11327.fix_date')::date
     WHERE lower(bt.pdl_client_code) = lower((SELECT doc ->> 'client_id' FROM cfg))
 ),
 restrictions AS (  -- restrictions by CID with their list, live or deleted

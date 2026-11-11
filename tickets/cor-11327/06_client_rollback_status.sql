@@ -1,18 +1,19 @@
--- Client DB. Undoes script 05 from the backup table. Skips a trade whose status changed after script 05.
+-- Client DB. Undoes 05 from the backup table: old status active again, rows added by 05 deleted.
+-- Skips trades whose status changed after 05. Dry run unless --commit.
 BEGIN;
 
-WITH target AS (
+WITH target AS (  -- trades changed by script 05 whose new status is still the only active status
     SELECT b.transaction_id, b.old_extra_id, b.new_status_extra_id, b.new_comment_extra_id
     FROM public.remediation_cor11327_status_backup b
     JOIN bk_txn_extra ns ON ns.extra_id = b.new_status_extra_id AND ns.is_active AND ns.attribute_value = b.new_status
-    WHERE b.rolled_back_at IS NULL
+    WHERE b.rolled_back_at IS NULL  -- not rolled back yet
       AND NOT EXISTS (SELECT 1 FROM bk_txn_extra o
                       WHERE o.transaction_id = b.transaction_id AND o.extra_type_id = ns.extra_type_id
                         AND o.is_active AND o.extra_id <> ns.extra_id)
 ),
-reactivated AS (UPDATE bk_txn_extra e SET is_active = true FROM target t WHERE e.extra_id = t.old_extra_id),
-removed AS (DELETE FROM bk_txn_extra e USING target t WHERE e.extra_id IN (t.new_status_extra_id, t.new_comment_extra_id))
-UPDATE public.remediation_cor11327_status_backup b SET rolled_back_at = now()
+reactivated AS (UPDATE bk_txn_extra e SET is_active = true FROM target t WHERE e.extra_id = t.old_extra_id),          -- old status back
+removed AS (DELETE FROM bk_txn_extra e USING target t WHERE e.extra_id IN (t.new_status_extra_id, t.new_comment_extra_id))  -- rows added by 05
+UPDATE public.remediation_cor11327_status_backup b SET rolled_back_at = now()  -- mark as rolled back
 FROM target t
 WHERE b.transaction_id = t.transaction_id AND b.rolled_back_at IS NULL;
 

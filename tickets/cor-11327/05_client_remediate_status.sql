@@ -1,10 +1,12 @@
--- Client DB, option B. Sets the new status of the approved trades, as the compliance app does: a new active
--- STATUS row and a COMMENT row, the old STATUS row inactive, all recorded in the backup table (for script 06).
--- Inputs: <CLIENT_RULES_JSON> = client_rules.json; temp table approved = approved_status_changes.csv
---         (transaction_id, expected_status, new_status) from the remediable rows of script 04.
+-- Client DB, option B. Inputs: client_rules.json, approved_status_changes.json (approved rows of 04).
+-- Sets the new status as the app does: old STATUS row inactive, new STATUS + COMMENT rows,
+-- each change saved in the backup table (for 06). Dry run unless --commit.
 BEGIN;
 
-WITH cfg AS (SELECT '<CLIENT_RULES_JSON>'::jsonb AS doc),
+WITH cfg AS (  -- input files as rows
+    SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
+approved AS (SELECT * FROM jsonb_to_recordset(current_setting('cor11327.approved_status_changes')::jsonb)
+             AS x(transaction_id text, expected_status text, new_status text)),
 types AS (SELECT attribute_type, extra_type_id FROM bk_txn_extra_types),
 support AS (SELECT user_key FROM userdb.users WHERE email_address = 'support@paragondatalabs.com'),
 target AS (  -- approved trades that are safe to change; the result below lists the skipped ones
@@ -48,6 +50,8 @@ SELECT t.transaction_id, t.old_extra_id, t.old_status, t.new_status, ns.extra_id
 FROM target t JOIN new_status ns USING (transaction_id) JOIN new_comment nc USING (transaction_id);
 
 -- Result: every approved trade, whether it changed, and its status now.
+WITH approved AS (SELECT * FROM jsonb_to_recordset(current_setting('cor11327.approved_status_changes')::jsonb)
+                  AS x(transaction_id text, expected_status text, new_status text))
 SELECT a.*, b.transaction_id IS NOT NULL AS applied,
        (SELECT string_agg(e.attribute_value, ';') FROM bk_txn_extra e JOIN bk_txn_extra_types t USING (extra_type_id)
         WHERE e.transaction_id = a.transaction_id AND e.is_active AND t.attribute_type = 'STATUS') AS status_now

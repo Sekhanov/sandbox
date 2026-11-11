@@ -1,20 +1,18 @@
-// Runs one SQL script and saves each result as CSV.   node run.js <00..06> [--dir <folder>] [--client <id>] [--fix-date <yyyy-mm-dd>] [--commit]
+// Runs one SQL script and saves its results.   node run.js <00..06> [--dir <folder>] [--client <id>] [--fix-date <yyyy-mm-dd>] [--commit]
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
-import { pipeline } from 'node:stream/promises';
 import pg from 'pg';
-import { from as copyFrom } from 'pg-copy-streams';
 import { stringify } from 'csv-stringify/sync';
 
-// Per script: database env prefix (as in the services), input CSV files (temp table -> file), output file.
+// Per script: database env prefix (as in the services), input files (from earlier scripts), output file.
 const SCRIPTS = {
   '00': { db: 'RDS' },
-  '01': { db: 'CLIENT_DB', output: 'restricted_cids.csv' },
-  '02': { db: 'RDS', output: 'security_hist_entity.csv', inputs: { restricted_cids: 'restricted_cids.csv' } },
+  '01': { db: 'CLIENT_DB', output: 'restricted_cids.json' },
+  '02': { db: 'RDS', inputs: ['restricted_cids.json'], output: 'security_hist_entity.json' },
   '03': { db: 'DB', output: 'client_rules.json' },
-  '04': { db: 'CLIENT_DB', output: 'candidates.csv', inputs: { ref_sec_hist: 'security_hist_entity.csv' } },
-  '05': { db: 'CLIENT_DB', inputs: { approved: 'approved_status_changes.csv' } },
+  '04': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.csv' },
+  '05': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'approved_status_changes.json'] },
   '06': { db: 'CLIENT_DB' },
 };
 
@@ -40,18 +38,15 @@ const env = (key) => process.env[`${script.db}_${key}`];
 const db = new pg.Client({ host: env('HOST'), port: env('PORT'), database: env('DATABASE') ?? env('NAME'), user: env('USERNAME'), password: env('PASSWORD') });
 await db.connect();
 try {
-  // Input CSV files -> temp tables with text columns named after the header row.
-  for (const [table, file] of Object.entries(script.inputs ?? {})) {
-    const header = fs.readFileSync(path.join(opt.dir, file), 'utf8').split(/\r?\n/)[0].split(',');
-    await db.query(`CREATE TEMP TABLE ${table} (${header.map((c) => `${db.escapeIdentifier(c.trim())} text`).join(', ')})`);
-    await pipeline(fs.createReadStream(path.join(opt.dir, file)), db.query(copyFrom(`COPY ${table} FROM STDIN (FORMAT csv, HEADER)`)));
+  // Inputs as session settings cor11327.<name>, read in SQL with current_setting(); nothing is created in the DB.
+  const settings = { client_id: opt.client, fix_date: opt['fix-date'] };
+  for (const file of script.inputs ?? []) settings[path.parse(file).name] = fs.readFileSync(path.join(opt.dir, file), 'utf8');
+  for (const [key, value] of Object.entries(settings)) {
+    if (value !== undefined) await db.query('SELECT set_config($1, $2, false)', [`cor11327.${key}`, value]);
   }
 
-  // Fill in the placeholders and run the whole script. --commit turns the final dry-run ROLLBACK into COMMIT.
-  let sql = fs.readFileSync(path.join(sqlDir, sqlFile), 'utf8')
-    .replaceAll("'<CLIENT_ID>'", () => db.escapeLiteral(opt.client))
-    .replaceAll("'<FIX_DATE>'", () => db.escapeLiteral(opt['fix-date']))
-    .replaceAll("'<CLIENT_RULES_JSON>'", () => db.escapeLiteral(fs.readFileSync(path.join(opt.dir, 'client_rules.json'), 'utf8')));
+  // Run the whole script. --commit turns the final dry-run ROLLBACK into COMMIT.
+  let sql = fs.readFileSync(path.join(sqlDir, sqlFile), 'utf8');
   if (opt.commit) sql = sql.replace(/ROLLBACK;\s*$/, 'COMMIT;');
   const results = [].concat(await db.query(sql)).filter((r) => r.fields.length);
 
@@ -64,7 +59,7 @@ try {
   });
   const last = results.at(-1);
   if (script.output && last) {
-    fs.writeFileSync(path.join(opt.dir, script.output), script.output.endsWith('.json') ? Object.values(last.rows[0] ?? {})[0] ?? '' : csv(last));
+    fs.writeFileSync(path.join(opt.dir, script.output), script.output.endsWith('.json') ? JSON.stringify(last.rows, null, 2) : csv(last));
   }
 } finally {
   await db.end();

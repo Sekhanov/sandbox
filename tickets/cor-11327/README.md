@@ -48,17 +48,19 @@ What the compliance app does with restrictions:
 
 ## The scripts
 
-| Script | Database | What it does | Output |
-|---|---|---|---|
-| `00` | SMA | Counts the chains of ID changes (must be 0: only single changes are covered). | count |
-| `01` | Client | Every CID the client's restrictions ever had (live, inactive, deleted), with a `bad_format` flag. | `restricted_cids.csv` |
-| `02` | SMA | Securities whose other entity ID (one change) is a restricted CID. | `security_hist_entity.csv` |
-| `03` | Central | The client's restriction rules, SIC rules and status names. No row: unknown client. | `client_rules.json` |
-| `04` | Client | Trades processed before the fix where the engine missed a restriction on the other ID. Read-only. | `candidates.csv` |
-| `05` | Client | Option B: sets the new status of the approved trades, with a comment row and a backup. | approved trades, `applied` |
-| `06` | Client | Undoes `05` from the backup table. | changed trades, `rolled_back` |
+Run them in this order, per client. Each script reads the output of the earlier ones.
 
-Placeholders: `<CLIENT_ID>` (`03`), `<FIX_DATE>` (`04`), `<CLIENT_RULES_JSON>` (`04`, `05`: the content of `client_rules.json`). Input CSV files are temp tables with text columns. `05` and `06` end with `ROLLBACK` (dry run).
+| Script | Database | What it does, in plain words | Output |
+|---|---|---|---|
+| `00` | SMA | Safety check. Counts entities whose ID changed twice (A → B → C). Must be 0, because the scripts handle only one change (A → B). | `chained_changes` |
+| `01` | Client | Lists every company (entity ID) the client has ever restricted, including restrictions that were edited or deleted later. | `restricted_cids.json` |
+| `02` | SMA | For each restricted company whose ID changed, finds the securities (shares, bonds) that now carry the other ID. The engine checked only that other ID, so it missed the restriction for these securities. | `security_hist_entity.json` |
+| `03` | Central | Exports the client's rules: which restriction lists to check, which status each rule sets, and the status names. | `client_rules.json` |
+| `04` | Client | Finds the trades in those securities that the engine processed before the fix and that a restriction should have caught. For each trade it shows the status it should have, and whether the change is safe (`remediable`) or needs a person (`review_reason`). Read-only. | `candidates.csv` |
+| `05` | Client | Only if the client agreed to a direct fix in the database (option B in "How to correct the trades"). Sets the corrected status on the trades that compliance approved, adds a comment, and saves the old status in a backup table. Dry run unless `--commit`. | `applied` per trade |
+| `06` | Client | Undoes `05` from the backup table. Dry run unless `--commit`. | `rolled_back` per trade |
+
+The app passes the earlier output files, `--client` and `--fix-date` to the SQL as session settings (`cor11327.<name>`, read with `current_setting`). Nothing to replace by hand and no temp tables. `05` and `06` end with `ROLLBACK` (dry run).
 
 ### Main columns of `candidates.csv` (one row per trade)
 
@@ -86,7 +88,7 @@ Placeholders: `<CLIENT_ID>` (`03`), `<FIX_DATE>` (`04`), `<CLIENT_RULES_JSON>` (
 ## How to correct the trades
 
 - **Option A, run the engine again** (`POST v2/process-trade?readOnly=true`): shows today's decision only, cannot correct a trade, exists on AWS only. Use it as a cross-check.
-- **Option B, change the status** (scripts `05`, `06`): adds a new `STATUS` row and a `COMMENT` row, sets the old row inactive, as the compliance app does. Needs client approval and a CNG per client. It does not repeat the SIC check.
+- **Option B, change the status** (scripts `05`, `06`): adds a new `STATUS` row and a `COMMENT` row, sets the old row inactive, as the compliance app does. Needs client approval and a CNG per client.
 - **Option C, report only**: the support team sends `candidates.csv` to the compliance officers, who decide in the app.
 
 Recommendation: C for all clients; B only for the trades a client approved; A as a cross-check on AWS.
@@ -95,12 +97,12 @@ Script `05` skips a trade when its status changed since the review, it has more 
 
 ## Runbook
 
-The app in `app/run.js` loads the input CSV files into temp tables, fills in the placeholders, runs the script, and saves every result as CSV.
+The app in `app/run.js` passes the input files to the script, runs it, and saves every result.
 
 ### Setup
 
 ```zsh
-cd app && npm ci        # Node 20.12+; libraries: pg, pg-copy-streams, csv-stringify
+cd app && npm ci        # Node 20.12+; libraries: pg, csv-stringify
 cp .env.example .env    # fill in RDS_*, DB_*, CLIENT_DB_* (same names as in the services)
 umask 077               # output files hold employee trade data
 ```
@@ -113,8 +115,8 @@ Run one script at a time. Each run prints every result (first 20 rows) and saves
 
 ```zsh
 npm run 00 -- --dir ../out/eu                              # chained_changes = 0
-npm run 01 -- --dir ../out/eu/ACME                         # restricted_cids.csv; bad_format rows come first
-npm run 02 -- --dir ../out/eu/ACME                         # security_hist_entity.csv
+npm run 01 -- --dir ../out/eu/ACME                         # restricted_cids.json
+npm run 02 -- --dir ../out/eu/ACME                         # security_hist_entity.json
 npm run 03 -- --dir ../out/eu/ACME --client ACME           # client_rules.json
 npm run 04 -- --dir ../out/eu/ACME --fix-date 2026-10-14   # candidates.csv
 ```
@@ -123,7 +125,7 @@ npm run 04 -- --dir ../out/eu/ACME --fix-date 2026-10-14   # candidates.csv
 
 For option B (under CNG 2):
 
-1. The officers return `approved_status_changes.csv` with the columns `transaction_id, expected_status, new_status` (from `candidates.csv` rows with `remediable = true`: `current_status`, `proposed_status`).
+1. From the officers' answer, save `approved_status_changes.json` as `[{"transaction_id": "...", "expected_status": "...", "new_status": "..."}]` (from `candidates.csv` rows with `remediable = true`: `current_status`, `proposed_status`).
 2. A DBA creates the backup table (below).
 3. `npm run 05 -- --dir ../out/eu/ACME`: dry run. Check the `applied` column; `false` means skipped.
 4. `npm run 05 -- --dir ../out/eu/ACME --commit`: applies the changes.
@@ -131,7 +133,7 @@ For option B (under CNG 2):
 
 Rollback: `npm run 06 -- --dir ../out/eu/ACME`, then with `--commit`, then the cache refresh.
 
-Without the app, run the scripts in a DB tool: import the input CSV files as temp tables and replace the placeholders.
+Without the app, run the scripts in a DB tool after `SET cor11327.<name> = '<file content>'` for each input.
 
 ### Backup table and rights (option B)
 
@@ -149,12 +151,12 @@ CREATE TABLE public.remediation_cor11327_status_backup (
 GRANT SELECT, INSERT, UPDATE ON public.remediation_cor11327_status_backup TO <remediation_role>;
 ```
 
-The role also needs: `SELECT` on `bk_txn`, `migdb.deleted_disclosures`, `migdb.deleted_attribute_extra`, `bk_txn_extra_types`, `userdb.users`; `SELECT, INSERT, UPDATE` (and `DELETE` for `06`) on `bk_txn_extra`; `USAGE` on the schemas `public`, `userdb` and on the `extra_id` sequence; `TEMP` on the database.
+The role also needs: `SELECT` on `bk_txn`, `bk_txn_extra_types`, `userdb.users`; `SELECT, INSERT, UPDATE` (and `DELETE` for `06`) on `bk_txn_extra`; `USAGE` on the schemas `public`, `userdb` and on the `extra_id` sequence.
 
 ## Tickets
 
-1. SP: read access to the SMA (each region), the central DB and the client DBs in scope, with `TEMP` on the client DBs.
-2. CNG 1: the read-only search (scripts `00`–`03`).
+1. SP: read access to the SMA (each region), the central DB and the client DBs in scope (schemas `public` and `migdb`).
+2. CNG 1: the read-only search (scripts `00`–`04`).
 3. Secure hand-off of `candidates.csv` to the compliance officers.
 4. CNG 2 per client with option B: backup table and role, script `05` with the dry-run output, rollback with `06`, cache refresh.
 5. CNG 3: drop the backup table after the retention period; delete the `out/` folders.
@@ -169,7 +171,6 @@ Limits of the search:
 - Script `04` uses today's rule configuration. I found no history of which rule version was active when.
 - `processed_at` is the `created_date` of the `RULE_STATUS` row (assumed to be the processing time).
 - It does not see trades without `RULE_STATUS` (older loaders) or trades that exist only in the central table `brokerdb.trade_data`.
-- List names that contain `,` or `)` break the "already matched" check.
 - `MERGED_CID` in `entity_info_extra` exists only since 2026-08-26 and may cover only local entities; the scripts use SMA merges.
 - Script `05` does not change the `RULE_STATUS` copy in `brokerdb.trade_data`, and leaves `created_date` to the column default.
 
@@ -194,7 +195,7 @@ In `compliance-rules-engine/lambdas/rules-engine-3.0/src/` unless noted.
 | Topic | Location |
 |---|---|
 | Order of the trade checks | `serverless/public/functions/tradeProcessV2/tradeProcess.ts:89-121` |
-| Restriction check and rule loop | `tradeProcess.ts:326-369` |
+| Restriction check and rule loop | `tradeProcess.ts:316-371` |
 | SIC check, preclear match | `tradeProcess.ts:374-407`, `:569-571` |
 | Save to `bk_txn` / `bk_txn_extra`, support user | `serverless/public/functions/tradeProcessV2/service.ts:586-719`, `:50-62` |
 | Restriction time window and query | `storage/repositories/clientDb/RestrictionRepository.ts:29-41`, `:105-123` |
@@ -203,4 +204,6 @@ In `compliance-rules-engine/lambdas/rules-engine-3.0/src/` unless noted.
 | Cache refresh call | `libs/disclosureAppServer/AdminPortalClient.ts:14-21` |
 | `all_entity_ids`, one step only | `compliance-security-master/services/securityService.ts:63-75` |
 | SMA security queries | `compliance-security-master/utils/queries.ts:19-59` |
+| App: delete with copy to `migdb` | `compliance-app/backend/employee_compliance_lib/.../service/DisclosureService.java:6040-6064` |
+| App: merge rewrites restriction CIDs | `DisclosureService.java:2203-2232` (same folder) |
 | Status change convention of the app | `compliance-app/backend/cron-jobs/reference-data/sql/functions/CLIENTDB/fn_process_trade_data_direct.sql:322-329` |
