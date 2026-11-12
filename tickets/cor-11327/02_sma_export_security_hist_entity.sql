@@ -3,13 +3,14 @@
 -- Finds securities whose other ID (before or after a merge) is restricted:
 -- engine_entity_id = ID the engine checked, historical_entity_id = restricted ID it missed.
 WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('cor11327.restricted_cids')::jsonb) AS x(cid text)),
-changes AS (SELECT * FROM sym_merged_entity_id WHERE merged_factset_entity_id <> to_factset_entity_id),
-pairs AS (
+pairs AS (  -- only ID changes of restricted companies (old <> new)
     SELECT merged_factset_entity_id AS historical_entity_id, to_factset_entity_id AS engine_entity_id, merge_date
-    FROM changes WHERE merged_factset_entity_id IN (SELECT cid FROM restricted)  -- old ID restricted
+    FROM sym_merged_entity_id
+    WHERE merged_factset_entity_id IN (SELECT cid FROM restricted) AND merged_factset_entity_id <> to_factset_entity_id  -- old ID restricted
     UNION
     SELECT to_factset_entity_id, merged_factset_entity_id, merge_date
-    FROM changes WHERE to_factset_entity_id IN (SELECT cid FROM restricted)      -- new ID restricted
+    FROM sym_merged_entity_id
+    WHERE to_factset_entity_id IN (SELECT cid FROM restricted) AND merged_factset_entity_id <> to_factset_entity_id      -- new ID restricted
 )
 SELECT s.fsym_id AS security_id, p.* FROM pairs p JOIN all_securities s ON s.entity_id = p.engine_entity_id
 UNION
