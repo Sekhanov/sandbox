@@ -5,13 +5,13 @@ import { parseArgs } from 'node:util';
 import pg from 'pg';
 import { stringify } from 'csv-stringify/sync';
 
-// Per script: database env prefix (as in the services), input files (from earlier scripts), output file.
+// Per script: database env prefix (as in the services), required options, input files (from earlier scripts), output file.
 const SCRIPTS = {
   '00': { db: 'RDS' },
   '01': { db: 'CLIENT_DB', output: 'restricted_cids.json' },
   '02': { db: 'RDS', inputs: ['restricted_cids.json'], output: 'security_hist_entity.json' },
-  '03': { db: 'DB', output: 'client_rules.json' },
-  '04': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.json' },
+  '03': { db: 'DB', required: ['client'], output: 'client_rules.json' },
+  '04': { db: 'CLIENT_DB', required: ['fix-date'], inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.json' },
   '05': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'candidates.json'] },
   '06': { db: 'CLIENT_DB' },
 };
@@ -28,19 +28,26 @@ if (!script) {
   console.error('Usage: npm run <00..06> -- [--dir <folder>] [--client <id>] [--fix-date <yyyy-mm-dd>] [--commit]   (default dir: ../out)');
   process.exit(1);
 }
+const missing = (script.required ?? []).filter((o) => !opt[o]);
+if (missing.length) {
+  console.error(`Script ${name} needs: ${missing.map((o) => `--${o}`).join(', ')}`);
+  process.exit(1);
+}
 
 const sqlDir = path.join(import.meta.dirname, '..');
 const sqlFile = fs.readdirSync(sqlDir).find((f) => f.startsWith(`${name}_`));
 const csv = (r) => stringify(r.rows, { header: true, columns: r.fields.map((f) => f.name), cast: { boolean: String, object: JSON.stringify } });
 fs.mkdirSync(path.join(opt.dir, 'steps'), { recursive: true });
 
+// Inputs as session settings missed_restriction.<name>, read in SQL with current_setting(); nothing is created in the DB.
+// Read before connecting, so a missing file fails at once.
+const settings = [['client_id', opt.client], ['fix_date', opt['fix-date']],
+  ...(script.inputs ?? []).map((f) => [path.parse(f).name, fs.readFileSync(path.join(opt.dir, f), 'utf8')])];
+
 const env = (key) => process.env[`${script.db}_${key}`];
 const db = new pg.Client({ host: env('HOST'), port: env('PORT'), database: env('DATABASE') ?? env('NAME'), user: env('USERNAME'), password: env('PASSWORD') });
 await db.connect();
 try {
-  // Inputs as session settings missed_restriction.<name>, read in SQL with current_setting(); nothing is created in the DB.
-  const settings = [['client_id', opt.client], ['fix_date', opt['fix-date']],
-    ...(script.inputs ?? []).map((f) => [path.parse(f).name, fs.readFileSync(path.join(opt.dir, f), 'utf8')])];
   for (const [key, value] of settings) {
     if (value !== undefined) await db.query('SELECT set_config($1, $2, false)', [`missed_restriction.${key}`, value]);
   }
