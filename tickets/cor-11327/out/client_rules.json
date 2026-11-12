@@ -1,0 +1,25 @@
+[
+  {
+    "rules": {
+      "client_id": "poc1",
+      "sic_rules": [],
+      "restriction_rules": [
+        {
+          "ACTION": {
+            "IN": "PENDING_MATCH_STATUS",
+            "NOT_IN": false
+          },
+          "LIST_NAME": [
+            "Restricted List"
+          ]
+        }
+      ],
+      "trade_status_config": {
+        "MATCH_STATUS": "Matched",
+        "MANAGED_ACCOUNT": "Managed Account",
+        "PRECLR_NOT_NEEDED": "Preclear Not Needed",
+        "PENDING_MATCH_STATUS": "Pending Match"
+      }
+    }
+  }
+]
