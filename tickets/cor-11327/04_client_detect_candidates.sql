@@ -1,4 +1,4 @@
--- Client DB, read-only. Inputs: client_rules.json, security_hist_entity.json, --fix-date. Output: candidates.csv.
+-- Client DB, read-only. Inputs: client_rules.json, security_hist_entity.json, --fix-date. Output: candidates.json (for 05).
 -- Trades processed before the fix that missed a restriction on the other entity ID of their security.
 -- One row per trade; remediable = true means safe to fix with 05, otherwise review_reason says why not.
 WITH cfg AS (  -- input files as rows

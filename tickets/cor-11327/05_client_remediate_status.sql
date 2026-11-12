@@ -1,12 +1,14 @@
--- Client DB, option B. Inputs: client_rules.json, approved_status_changes.json (approved rows of 04).
+-- Client DB. Inputs: client_rules.json, candidates.json (04). Fixes the rows with remediable = true.
 -- Sets the new status as the app does: old STATUS row inactive, new STATUS + COMMENT rows,
 -- each change saved in the backup table (for 06). Dry run unless --commit.
 BEGIN;
 
 WITH cfg AS (  -- input files as rows
     SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
-approved AS (SELECT * FROM jsonb_to_recordset(current_setting('cor11327.approved_status_changes')::jsonb)
-             AS x(transaction_id text, expected_status text, new_status text)),
+approved AS (SELECT transaction_id, current_status AS expected_status, proposed_status AS new_status
+             FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
+                  AS x(transaction_id text, current_status text, proposed_status text, remediable boolean)
+             WHERE remediable),
 types AS (SELECT attribute_type, extra_type_id FROM bk_txn_extra_types),
 support AS (SELECT user_key FROM userdb.users WHERE email_address = 'support@paragondatalabs.com'),
 target AS (  -- approved trades that are safe to change; the result below lists the skipped ones
@@ -49,9 +51,11 @@ INSERT INTO public.remediation_cor11327_status_backup
 SELECT t.transaction_id, t.old_extra_id, t.old_status, t.new_status, ns.extra_id, nc.extra_id
 FROM target t JOIN new_status ns USING (transaction_id) JOIN new_comment nc USING (transaction_id);
 
--- Result: every approved trade, whether it changed, and its status now.
-WITH approved AS (SELECT * FROM jsonb_to_recordset(current_setting('cor11327.approved_status_changes')::jsonb)
-                  AS x(transaction_id text, expected_status text, new_status text))
+-- Result: every remediable trade, whether it changed, and its status now.
+WITH approved AS (SELECT transaction_id, current_status AS expected_status, proposed_status AS new_status
+                  FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
+                       AS x(transaction_id text, current_status text, proposed_status text, remediable boolean)
+                  WHERE remediable)
 SELECT a.*, b.transaction_id IS NOT NULL AS applied,
        (SELECT string_agg(e.attribute_value, ';') FROM bk_txn_extra e JOIN bk_txn_extra_types t USING (extra_type_id)
         WHERE e.transaction_id = a.transaction_id AND e.is_active AND t.attribute_type = 'STATUS') AS status_now

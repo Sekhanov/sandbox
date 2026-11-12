@@ -11,8 +11,8 @@ const SCRIPTS = {
   '01': { db: 'CLIENT_DB', output: 'restricted_cids.json' },
   '02': { db: 'RDS', inputs: ['restricted_cids.json'], output: 'security_hist_entity.json' },
   '03': { db: 'DB', output: 'client_rules.json' },
-  '04': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.csv' },
-  '05': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'approved_status_changes.json'] },
+  '04': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.json' },
+  '05': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'candidates.json'] },
   '06': { db: 'CLIENT_DB' },
 };
 
