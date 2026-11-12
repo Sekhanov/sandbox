@@ -1,6 +1,10 @@
 -- SMA, read-only. Input: restricted_cids.json. Output: security_hist_entity.json (for 04).
--- Securities whose restriction the engine missed after an ID change (old A1 -> new B2):
--- engine_entity_id = ID the engine checked, historical_entity_id = restricted ID it missed.
+-- Securities whose restriction the engine missed after an ID change (old A1 -> new B2).
+-- Result columns:
+--   security_id          - the security (FactSet fsym_id or local security_id)
+--   historical_entity_id - restricted ID the engine missed
+--   engine_entity_id     - ID the engine checked (the security's entity ID)
+--   merge_date           - date of the ID change
 WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('cor11327.restricted_cids')::jsonb) AS x(cid text)),
 pairs AS (
     -- restriction on old ID A1, shares carry B2

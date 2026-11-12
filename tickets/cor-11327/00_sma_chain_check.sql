@@ -1,6 +1,8 @@
 -- SMA, read-only. Run once per region.
 -- FactSet can replace a company's entity ID (old -> new). The scripts handle one change only,
--- so chained_changes (abc -> def -> xyz) must be 0.
+-- so chains (abc -> def -> xyz) must be 0.
+-- Result columns:
+--   chained_changes - number of ID changes whose new ID was changed again
 SELECT count(*) AS chained_changes
 FROM sym_merged_entity_id a
 JOIN sym_merged_entity_id b ON b.merged_factset_entity_id = a.to_factset_entity_id  -- a's new ID was changed again by b

@@ -2,6 +2,8 @@
 -- All company IDs (CID) the client ever restricted: live, edited (inactive) and deleted
 -- (the app copies deleted restrictions to migdb.deleted_* in the same DB).
 -- Reads only CID rows (index on the type) and joins each to its disclosure by id.
+-- Result columns:
+--   cid - restricted company ID (FactSet entity ID), one row per ID
 WITH cid_type AS (SELECT attribute_extra_type_id FROM attribute_extra_types WHERE attribute_type = 'CID'),
 restriction_type AS (SELECT disc_type_id FROM disclosure_types WHERE disc_type = 'RESTRICTION')
 SELECT a.attribute_value AS cid

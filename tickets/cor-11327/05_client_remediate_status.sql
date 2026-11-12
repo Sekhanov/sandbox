@@ -1,6 +1,12 @@
 -- Client DB. Inputs: client_rules.json, candidates.json (04). Fixes the rows with remediable = true.
 -- Sets the new status as the app does: old STATUS row inactive, new STATUS + COMMENT rows,
 -- each change saved in the backup table (for 06). Dry run unless --commit.
+-- Result columns:
+--   transaction_id  - the trade
+--   current_status  - status found by 04
+--   proposed_status - status to set
+--   applied         - true: changed now; false: skipped (status changed since 04, preclear link, or already fixed)
+--   status_now      - status after this run
 BEGIN;
 
 WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),

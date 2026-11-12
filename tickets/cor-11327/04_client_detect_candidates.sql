@@ -2,6 +2,21 @@
 -- Trades processed before the fix that missed a restriction on the other entity ID of their security.
 -- One row per trade; remediable = true means safe to fix with 05, otherwise review_reason says why not.
 -- Cost: one pass over the SECURITY_ID rows of bk_txn_extra (no index on the value); everything else is by index or small.
+-- Result columns:
+--   transaction_id, trade_id, trade_date, account_last4, symbol, security_name, transaction_type, quantity - the trade
+--   security_id, engine_entity_id, historical_entity_id, merge_date - from 02
+--   rule_status          - engine result text (RULE_STATUS)
+--   processed_at         - when the engine wrote it
+--   first_fired_rule     - first rule that fired then (empty: none)
+--   disc_id, restriction_list_name, restriction_deleted - the missed restriction
+--   rule_index           - first rule that would have changed the result
+--   proposed_status      - status that rule sets (empty: NOT_IN rule)
+--   has_employee_filter  - the rule filters by employee
+--   current_status       - status now
+--   status_rows          - number of STATUS rows (more than 1: changed after processing)
+--   preclear_id          - linked preclear, if any
+--   review_reason        - why a person must decide (empty: safe)
+--   remediable           - true: 05 fixes it
 WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),  -- client_rules.json
 ref_sec_hist AS (  -- security_hist_entity.json as rows
     SELECT * FROM jsonb_to_recordset(current_setting('cor11327.security_hist_entity')::jsonb)

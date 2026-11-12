@@ -1,5 +1,11 @@
 -- Client DB. Undoes 05 from the backup table: old status active again, rows added by 05 deleted.
 -- Skips trades whose status changed after 05. Dry run unless --commit.
+-- Result columns:
+--   transaction_id - the trade
+--   old_status     - status before 05
+--   new_status     - status set by 05
+--   rolled_back    - true: undone now; false: skipped (status changed after 05)
+--   status_now     - status after this run
 BEGIN;
 
 WITH target AS (  -- trades changed by script 05 whose new status is still the only active status
