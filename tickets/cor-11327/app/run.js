@@ -5,14 +5,15 @@ import { parseArgs } from 'node:util';
 import pg from 'pg';
 import { stringify } from 'csv-stringify/sync';
 
-// Per script: database env prefix (as in the services), required options, input files (from earlier scripts), output file.
+// Per script: database env prefix (as in the services), required options, input files (from earlier scripts),
+// output file (all result rows; single: only the value of the first row and column).
 const SCRIPTS = {
   '00': { db: 'RDS' },
   '01': { db: 'CLIENT_DB', output: 'restricted_cids.json' },
   '02': { db: 'RDS', inputs: ['restricted_cids.json'], output: 'security_hist_entity.json' },
-  '03': { db: 'DB', required: ['client'], output: 'client_rules.json' },
+  '03': { db: 'DB', required: ['client'], output: 'client_rules.json', single: true },
   '04': { db: 'CLIENT_DB', required: ['fix-date'], inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.json' },
-  '05': { db: 'CLIENT_DB', inputs: ['client_rules.json', 'candidates.json'] },
+  '05': { db: 'CLIENT_DB', inputs: ['candidates.json'] },
   '06': { db: 'CLIENT_DB' },
 };
 
@@ -65,7 +66,8 @@ try {
   });
   const last = results.at(-1);
   if (script.output && last) {
-    fs.writeFileSync(path.join(opt.dir, script.output), script.output.endsWith('.json') ? JSON.stringify(last.rows, null, 2) : csv(last));
+    const data = script.single ? Object.values(last.rows[0] ?? {})[0] ?? null : last.rows;
+    fs.writeFileSync(path.join(opt.dir, script.output), JSON.stringify(data, null, 2));
   }
 } finally {
   await db.end();

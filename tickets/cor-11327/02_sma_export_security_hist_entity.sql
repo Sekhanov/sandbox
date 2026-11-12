@@ -13,13 +13,11 @@ WITH restricted AS (SELECT cid
          SELECT merged_factset_entity_id AS restricted_cid, to_factset_entity_id AS security_cid, merge_date
          FROM sym_merged_entity_id
          WHERE merged_factset_entity_id IN (SELECT cid FROM restricted)
-           AND merged_factset_entity_id <> to_factset_entity_id
          UNION
          -- the restriction has the new CID (B2), the security still has the old CID (A1)
          SELECT to_factset_entity_id, merged_factset_entity_id, merge_date
          FROM sym_merged_entity_id
-         WHERE to_factset_entity_id IN (SELECT cid FROM restricted)
-           AND merged_factset_entity_id <> to_factset_entity_id)
+         WHERE to_factset_entity_id IN (SELECT cid FROM restricted))
 SELECT s.fsym_id AS security_id, p.*
 FROM pairs p
          JOIN all_securities s ON s.entity_id = p.security_cid

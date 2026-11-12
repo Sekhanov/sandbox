@@ -15,7 +15,7 @@ Run them in this order, once per client. Each script uses the files made by the 
 | `02` | SMA | Which of them changed their ID, and which shares carry the other ID? | `restricted_cids.json` | `security_hist_entity.json` |
 | `03` | Central | Which rules does the client use (lists that block a trade, status they set)? | `--client` | `client_rules.json` |
 | `04` | Client | Which trades in those shares were approved by mistake before the fix? Shows the correct status, and `remediable` (safe to fix) or `review_reason` (a person decides). Changes nothing. | files from `02`, `03`, `--fix-date` | `candidates.json` |
-| `05` | Client | Fix: set the correct status on every `remediable` trade from `04`. Saves the old status. | `candidates.json`, `client_rules.json` | result on screen |
+| `05` | Client | Fix: set the correct status on every `remediable` trade from `04`. Saves the old status. | `candidates.json` | result on screen |
 | `06` | Client | Undo `05`. | backup from `05` | result on screen |
 
 `05` and `06` change nothing unless you add `--commit`.
@@ -50,6 +50,34 @@ CREATE TABLE public.missed_restriction_status_backup (
     applied_at timestamptz NOT NULL DEFAULT now(), rolled_back_at timestamptz
 );
 ```
+
+## How `04` decides
+
+A trade is listed when all of these hold:
+1. Its security is in `security_hist_entity.json` (from `02`).
+2. The engine ran the restriction check (`RULE_STATUS` contains `RESTRICTION_CHECK_`) before `--fix-date`.
+3. A restriction has the CID the engine missed (`restricted_cid`), live or deleted.
+4. The engine could not find that restriction: when the trade was processed, the restriction had no CID row equal to `security_cid` and no `SECURITY_ID` row equal to the trade's security. (After a merge the app may add the new CID; then the engine found it.)
+5. The restriction was active on the trade date: an `Active` status row by the end of that day, no `Cleared`/`Inactive` before it.
+6. Its list matches a client rule (`LIST_NAME`, `LIKE`), and that rule would have changed the result:
+   - an `IN` rule at or before the first rule that fired, or
+   - a `NOT_IN` rule (allow-list) that fired because the restriction was missed.
+   - Rules skipped for the employee (`AUTH0_FALSE`) are ignored.
+
+Per trade, only the first such rule counts (the engine stops at the first rule with an action). Its `IN` status is `proposed_status`.
+
+`remediable = true` when `proposed_status` is set, differs from `current_status`, and there is no `review_reason`:
+
+| `review_reason` | Why `04` cannot be sure |
+|---|---|
+| `employee_filter` | The rule has `ATTRIBUTE_TYPE` or `AUTH0_CHECK_RULE`. |
+| `preclear_linked` | The trade is linked to a preclear or is `Matched`. |
+| `status_changed_by_user` | More than one `STATUS` row: someone changed it after processing. |
+| `pending_match_action` | The rule sets Pending Match; preclear matching would decide the final status. |
+| `sic_rules` | The client has SIC rules, which can overwrite the status. |
+| `not_in_rule` | An allow-list rule fired wrongly; the correct status is unknown. |
+| `deleted_restriction` | The restriction was deleted; its end date is unknown. |
+| `trade_before_merge` | Trade before the CID change: the engine checked the old CID, not `security_cid`. |
 
 ## Known limits
 

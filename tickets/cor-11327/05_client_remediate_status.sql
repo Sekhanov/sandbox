@@ -1,4 +1,4 @@
--- Client DB. Inputs: client_rules.json, candidates.json (04). Fixes the rows with remediable = true.
+-- Client DB. Input: candidates.json (04). Fixes the rows with remediable = true.
 -- Sets the new status as the app does: old STATUS row inactive, new STATUS + COMMENT rows,
 -- each change saved in the backup table (for 06). Dry run unless --commit.
 -- Result columns:
@@ -9,8 +9,7 @@
 --   status_now      - status after this run
 BEGIN;
 
-WITH cfg AS (SELECT current_setting('missed_restriction.client_rules')::jsonb -> 0 -> 'rules' AS doc),
-     fixes AS (SELECT *
+WITH fixes AS (SELECT *
                FROM jsonb_to_recordset(current_setting('missed_restriction.candidates')::jsonb)
                         AS x(transaction_id text, current_status text, proposed_status text, remediable boolean)
                WHERE remediable),
@@ -22,14 +21,10 @@ WITH cfg AS (SELECT current_setting('missed_restriction.client_rules')::jsonb ->
                 s.attribute_value AS old_status,
                 f.proposed_status AS new_status
          FROM fixes f
-                  JOIN bk_txn bt ON bt.transaction_id = f.transaction_id
-             AND lower(bt.pdl_client_code) = lower(NULLIF((SELECT doc ->> 'client_id' FROM cfg), '')) -- this client
                   JOIN bk_txn_extra s ON s.transaction_id = f.transaction_id AND s.is_active
              AND s.extra_type_id IN (SELECT extra_type_id FROM types WHERE attribute_type = 'STATUS')
              AND s.attribute_value = f.current_status -- unchanged since 04
-         WHERE
-             f.proposed_status IN (SELECT value FROM cfg, jsonb_each_text(doc -> 'trade_status_config')) -- known status
-           AND NOT EXISTS (SELECT 1
+         WHERE NOT EXISTS (SELECT 1
                            FROM bk_txn_extra o -- one active status
                            WHERE o.transaction_id = s.transaction_id
                              AND o.extra_type_id = s.extra_type_id

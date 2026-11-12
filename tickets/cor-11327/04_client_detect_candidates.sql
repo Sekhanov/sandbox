@@ -19,16 +19,14 @@
 --   remediable           - true: 05 fixes it
 WITH cfg
          AS (SELECT
-                 current_setting('missed_restriction.client_rules')::jsonb -> 0 -> 'rules' AS doc), -- client_rules.json
+                 current_setting('missed_restriction.client_rules')::jsonb AS doc), -- client_rules.json
      ref_sec_hist AS ( -- security_hist_entity.json as rows
          SELECT *
          FROM jsonb_to_recordset(current_setting('missed_restriction.security_hist_entity')::jsonb)
                   AS x(security_id text, restricted_cid text, security_cid text, merge_date text)),
      rules AS ( -- client rules in engine order: list name patterns and the status an IN hit sets
          SELECT r.ord                                                                                          AS rule_index,
-                ARRAY(SELECT jsonb_array_elements_text(CASE jsonb_typeof(r.rule -> 'LIST_NAME')
-                                                           WHEN 'array' THEN r.rule -> 'LIST_NAME'
-                                                           ELSE jsonb_build_array(r.rule -> 'LIST_NAME') END)) AS list_patterns,
+                ARRAY(SELECT jsonb_array_elements_text(r.rule -> 'LIST_NAME'))                                 AS list_patterns,
                 cfg.doc -> 'trade_status_config' ->> (r.rule -> 'ACTION' ->> 'IN')                             AS proposed_status,
                 (r.rule -> 'ATTRIBUTE_TYPE') IS NOT NULL OR
                 (r.rule -> 'AUTH0_CHECK_RULE') IS NOT NULL                                                     AS has_employee_filter
@@ -65,8 +63,7 @@ WITH cfg
              AND rs.created_date < current_setting('missed_restriction.fix_date')::date
                   JOIN bk_txn bt ON bt.transaction_id = sec.transaction_id
          WHERE sec.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'SECURITY_ID')
-           AND sec.is_active IS NOT FALSE
-           AND lower(bt.pdl_client_code) = lower((SELECT doc ->> 'client_id' FROM cfg))),
+           AND sec.is_active IS NOT FALSE),
      restrictions
          AS MATERIALIZED ( -- restrictions whose CID is a missed ID; deleted if a copy is in migdb (soft-deleted ones are in both)
          SELECT a.attribute_id AS disc_id, a.attribute_value AS cid, bool_or(a.deleted) AS restriction_deleted
@@ -171,8 +168,7 @@ WITH cfg
                                                    c.doc -> 'trade_status_config' ->> 'PENDING_MATCH_STATUS'
                                                   THEN 'pending_match_action' END,
                                           CASE
-                                              WHEN jsonb_typeof(c.doc -> 'sic_rules') = 'array' AND
-                                                   jsonb_array_length(c.doc -> 'sic_rules') > 0 THEN 'sic_rules' END,
+                                              WHEN jsonb_array_length(c.doc -> 'sic_rules') > 0 THEN 'sic_rules' END,
                                           CASE WHEN proposed_status IS NULL THEN 'not_in_rule' END,
                                           CASE WHEN restriction_deleted THEN 'deleted_restriction' END,
                                           CASE WHEN trade_date < merge_date THEN 'trade_before_merge' END),
