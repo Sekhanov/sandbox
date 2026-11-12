@@ -4,7 +4,7 @@
 -- Cost: one pass over the SECURITY_ID rows of bk_txn_extra (no index on the value); everything else is by index or small.
 -- Result columns:
 --   transaction_id, trade_id, trade_date, account_last4, symbol, security_name, transaction_type, quantity - the trade
---   security_id, engine_entity_id, historical_entity_id, merge_date - from 02
+--   security_id, security_cid, restricted_cid, merge_date - from 02
 --   rule_status          - engine result text (RULE_STATUS)
 --   processed_at         - when the engine wrote it
 --   first_fired_rule     - first rule that fired then (empty: none)
@@ -20,7 +20,7 @@
 WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),  -- client_rules.json
 ref_sec_hist AS (  -- security_hist_entity.json as rows
     SELECT * FROM jsonb_to_recordset(current_setting('cor11327.security_hist_entity')::jsonb)
-                  AS x(security_id text, historical_entity_id text, engine_entity_id text, merge_date text)
+                  AS x(security_id text, restricted_cid text, security_cid text, merge_date text)
 ),
 rules AS (  -- client rules in engine order: list name patterns and the status an IN hit sets
     SELECT r.ord AS rule_index,
@@ -39,7 +39,7 @@ extra AS NOT MATERIALIZED (  -- active trade rows by type; only used per transac
 trades AS (  -- trades of the affected securities that went through the restriction check before the fix
     SELECT bt.transaction_id, bt.trade_id, bt.trade_date::date AS trade_date, right(bt.account_number, 4) AS account_last4,
            bt.symbol, bt.security_name, bt.transaction_type, bt.quantity, sec.attribute_value AS security_id,
-           h.engine_entity_id, h.historical_entity_id, h.merge_date::date AS merge_date,
+           h.security_cid, h.restricted_cid, h.merge_date::date AS merge_date,
            rs.attribute_value AS rule_status, rs.created_date AS processed_at,
            (SELECT min(f[1]::int) FROM regexp_matches(rs.attribute_value, 'RESTRICTION_CHECK_(\d+): true', 'g') f) AS first_fired_rule
     FROM bk_txn_extra sec
@@ -62,7 +62,7 @@ restrictions AS MATERIALIZED (  -- restrictions whose CID is a missed ID; delete
          ON d.disc_id = a.attribute_id
     WHERE a.attribute_extra_type_id IN (SELECT attribute_extra_type_id FROM attribute_extra_types WHERE attribute_type = 'CID')
       AND d.disc_type IN (SELECT disc_type_id FROM disclosure_types WHERE disc_type = 'RESTRICTION')
-      AND a.attribute_value IN (SELECT historical_entity_id FROM ref_sec_hist)
+      AND a.attribute_value IN (SELECT restricted_cid FROM ref_sec_hist)
     GROUP BY a.attribute_id, a.attribute_value
 ),
 rattr AS MATERIALIZED (  -- all fields of those restrictions, read once (the engine ignores is_active)
@@ -82,13 +82,13 @@ lists AS (  -- list name of each restriction
 hits AS (  -- restriction on the missed ID: not found by the engine, active on the trade date, on a list of a relevant rule
     SELECT t.*, r.disc_id, l.restriction_list_name, r.restriction_deleted, ru.rule_index, ru.proposed_status, ru.has_employee_filter
     FROM trades t
-    JOIN restrictions r ON r.cid = t.historical_entity_id
+    JOIN restrictions r ON r.cid = t.restricted_cid
     JOIN lists l USING (disc_id)
     JOIN rules ru ON l.restriction_list_name LIKE ANY (ru.list_patterns)
     WHERE NOT EXISTS (  -- the engine found it: a CID or SECURITY_ID row it searched by existed at processing time
             SELECT 1 FROM rattr f
             WHERE f.attribute_id = r.disc_id AND f.created_date <= t.processed_at
-              AND ((f.attribute_type = 'CID' AND f.attribute_value = t.engine_entity_id)
+              AND ((f.attribute_type = 'CID' AND f.attribute_value = t.security_cid)
                 OR (f.attribute_type = 'SECURITY_ID' AND f.attribute_value = t.security_id)))
       AND EXISTS (  -- Active by the end of the trade date, and not Cleared/Inactive before it (as the engine)
             SELECT 1 FROM rattr a

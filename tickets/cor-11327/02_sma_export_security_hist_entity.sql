@@ -1,22 +1,23 @@
 -- SMA, read-only. Input: restricted_cids.json. Output: security_hist_entity.json (for 04).
--- Securities whose restriction the engine missed after an ID change (old A1 -> new B2).
+-- Securities whose CID differs from the restriction's CID because FactSet changed the company's CID (A1 -> B2).
+-- The engine searched restrictions only by the security's CID, so it missed the restriction.
 -- Result columns:
---   security_id          - the security (FactSet fsym_id or local security_id)
---   historical_entity_id - restricted ID the engine missed
---   engine_entity_id     - ID the engine checked (the security's entity ID)
---   merge_date           - date of the ID change
+--   security_id    - the security (FactSet fsym_id or local security_id)
+--   restricted_cid - CID stored on the restriction
+--   security_cid   - CID of the security in SMA; the engine searched by this one
+--   merge_date     - date of the CID change
 WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('cor11327.restricted_cids')::jsonb) AS x(cid text)),
 pairs AS (
-    -- restriction on old ID A1, shares carry B2
-    SELECT merged_factset_entity_id AS historical_entity_id, to_factset_entity_id AS engine_entity_id, merge_date
+    -- the restriction has the old CID (A1), the security now has the new CID (B2)
+    SELECT merged_factset_entity_id AS restricted_cid, to_factset_entity_id AS security_cid, merge_date
     FROM sym_merged_entity_id
     WHERE merged_factset_entity_id IN (SELECT cid FROM restricted) AND merged_factset_entity_id <> to_factset_entity_id
     UNION
-    -- restriction on new ID B2, shares still carry A1
+    -- the restriction has the new CID (B2), the security still has the old CID (A1)
     SELECT to_factset_entity_id, merged_factset_entity_id, merge_date
     FROM sym_merged_entity_id
     WHERE to_factset_entity_id IN (SELECT cid FROM restricted) AND merged_factset_entity_id <> to_factset_entity_id
 )
-SELECT s.fsym_id AS security_id, p.* FROM pairs p JOIN all_securities s ON s.entity_id = p.engine_entity_id
+SELECT s.fsym_id AS security_id, p.* FROM pairs p JOIN all_securities s ON s.entity_id = p.security_cid
 UNION
-SELECT s.security_id, p.* FROM pairs p JOIN security_info s ON s.cid = p.engine_entity_id;
+SELECT s.security_id, p.* FROM pairs p JOIN security_info s ON s.cid = p.security_cid;

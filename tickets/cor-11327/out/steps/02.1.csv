@@ -1,4 +1,4 @@
-security_id,historical_entity_id,engine_entity_id,merge_date
+security_id,restricted_cid,security_cid,merge_date
 B0MLXZ-S,06BX4S-E,04CSMB-E,2025-10-25
 B1K9LT-L,0B0D2Q-E,066L2H-E,2018-03-13
 B1YYML-R,0B0D2Q-E,066L2H-E,2018-03-13

@@ -1,4562 +1,4562 @@
 [
   {
     "security_id": "B0MLXZ-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "B1K9LT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B1YYML-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B231TV-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B2D54F-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "B2DTR8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B2PQ96-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B2PVPG-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B39HC3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B41VLP-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "B4GPXK-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "B6BP1J-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "B751MJ-R",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "B76C0N-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B7RVRF-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B7SSD5-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B901SG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B91GNZ-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "B97QW3-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "B9RQ91-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "BB0PMP-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BCC4LG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BCDRS2-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BD2JPW-R",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "BDKLN7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BFYG9C-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BGCH5M-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BGJ4PM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BGPB96-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "BH8BT8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BHDH5M-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "BJRV8P-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "BKBTHH-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BMZ19R-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BPPBG4-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BQMW02-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "BSHV41-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "BSJ7J5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BT4W1P-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "BTB6Q1-R",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "BTC0CY-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BTXMS9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BV8PTL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BVRJM0-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "BWDWYM-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BX8WDY-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BXJVVN-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "BYHN54-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C0N6DW-R",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "C0T262-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C0THGT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C13MCW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C15456-R",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "C3W7YH-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C60VHJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C68ZTZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C6JPL8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C726G5-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "C7FPC2-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C89G0T-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "C8ZWXS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CBKKWL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CC9T9H-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CCP06K-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "CDG267-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CDH8HC-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "CFJDC3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CGL214-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CHTW8T-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "CJGDWG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CK277L-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "CK45L1-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CKFBCZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CLKM1H-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CMHFWC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CNVTXB-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CPDLKR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CPLVFK-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CR3CFH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CRN5XT-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CS1QN8-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "CSPVNS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CTD51J-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CTRD9X-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CTVL1K-R",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "CV7W3Q-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CWK5XG-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "CWKHV2-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CX7WDZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "CYG76K-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D046NN-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "D11FTG-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D129F8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D1CB14-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D1MXK9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D1R73N-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D1TBS8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D2T22Y-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D4LHGH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D4QYMB-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D50D3N-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D593LP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D5C2Z4-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D5QS40-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D5RZKC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D5T57S-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "D6NLYW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D7C2PT-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D7DL0T-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D7VB4M-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "D93RCJ-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "D9T5N1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DCW0R9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DDLFXR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DGQ2T1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DGQBZZ-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "DHN58G-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DHXXCZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DK5JMT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DKFSX3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DKGZST-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DQRNK0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DRGL2F-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DSS90T-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DTJ7SB-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DTRRV7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DVQM1D-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DWCXZP-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DX0HD3-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DZ15TT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DZ7528-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "DZC6V3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "F1WJ2H-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "F24Q6T-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "F2TBBZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "F5QH39-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "F5XRNW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "F634F9-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "F8QB18-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "F8WH7G-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "F94RBL-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FBHC30-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FBKDLJ-R",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "FD80QP-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FDRFHK-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FG82QK-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "FGFWBK-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FH2WNM-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FK7XRN-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FKGTZ5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FLR1RZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FMBPSY-R",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "FNB8WF-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "FQ7P21-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "FQDZ83-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FQGSWZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FR5YBZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FR7H2B-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FRTB1X-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "FSFZC5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FSHCZF-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "FT672C-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FT7LDJ-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "FVD5FZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FWGQNN-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FXN1G8-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "FY9YN6-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "G11WCT-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "G229NH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G37X6Q-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G39HPJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G3QZH9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G4XX22-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "G63RJV-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G6J2KY-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G6LZQ8-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "G7727B-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "G887RN-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "G98YZ4-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GBC3FH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GBX02S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GC66LC-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GCM4FP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GF4JV9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GJP4Z3-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GJZ7KX-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GK3JRY-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GKFG6S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GKLBWQ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GL686Q-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GMS6HL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GQ5B6H-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "GSTZ18-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GV036F-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GWBFNV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GWNZPN-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "GXKXD9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GYCCNW-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GZB7X5-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GZKBG0-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "GZL1J7-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "GZQ7D5-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H08M3Y-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H3XJ2J-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H41CJC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H49H72-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H4RWPL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H529MD-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H5TB6P-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "H634LJ-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "H66JQC-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H8CV3P-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H9PV4W-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "H9Y5N8-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HB5CRD-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HFTGDH-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "HGHLRC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HGQ47K-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HGV4S5-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "HK004S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HKHHYP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HKNNN8-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "HKR6LR-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HLNHQG-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "HLT1L1-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HLZ73F-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "HMRCJG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HPBW65-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HQ048M-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HQ7MSW-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HR8P23-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HRPVY6-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "HRRDFB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HSWP0M-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HT7VFB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HTB12R-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "HV3JLJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HV664H-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "HVK066-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HWW07D-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HXK9M4-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HXKTGJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HXLFDV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HZ1228-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HZ1NXK-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HZ88T4-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "HZQBH2-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "J10R1H-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J1HPCB-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J4HGZ1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J4XCP8-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J6TCL0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J7JJML-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J7RN13-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J85JP8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J8MG69-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "J8ZD8S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JB1QDN-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JB3Y35-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JBJ78F-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JCM01N-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JH159X-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JH7Q4D-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JHKP5T-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "JKWHKL-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "JL0Q20-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JM31YL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JMYZSB-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "JNTR8X-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JNW25J-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JNZ11N-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "JPZ6MY-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JQYW0L-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JR2XSF-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JS3HVX-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JS6LY4-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "JSZJNJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JT5T92-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JTXT3M-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JVBPRS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JVSM8T-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JWGQ07-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JWM6KF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JXPDBY-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JXW0LW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JXWYDS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JXZZ7K-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JYQ9JB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JYS012-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "JYY1DL-S",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "JZ33Y5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K05ZBS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K1T1GJ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K26BDF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K2QRTY-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K3Z61Z-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K43B0X-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K48J0W-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K56TV9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K57J4Y-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K5WN9L-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K6PF5L-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K6ZG3N-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K74MR8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K92X7H-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K9CRVD-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "K9LQMG-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KBG56D-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KDK0W7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KFKH0X-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KGT76L-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KL8177-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KLMFB9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KN5L9J-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KNVQXM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KPNKC0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KPT836-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KS0PLD-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "KT4M65-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KTLTQZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KTQ8RM-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KV1Z3M-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KVD2QF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KVRTBP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "KZL0B5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L27H02-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "L32R4P-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L3VW04-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L3X7RK-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "L4FYD0-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L4R13Y-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "L5D2P2-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "L6ZK7Q-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L70TGQ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L8060V-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L8W2ZR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "L9MTZR-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LB6BH9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LC73FH-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LCFDB8-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "LD0RBM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LD1Y11-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LDG3JR-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LGN34J-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LGS909-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LJMBFG-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "LJRMZV-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "LK1R78-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LKGJ6W-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "LKRP81-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LLJ9MJ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LM2XHB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LN1PGG-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LNPQRB-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "LNZNSQ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LP6W13-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "LPCDSB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LPXSK8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LQDDPC-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "LQXGGG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LSNYPX-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LTGDRD-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LV0KB7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LY98LZ-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "LYD8J0-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LYZD41-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "LZC6V9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LZL1JC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LZPBQC-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "LZTM2L-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M1HW62-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M24BDF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M3XT2C-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "M53ZZ7-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M76VJZ-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M7NYF6-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M84W1C-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M8G45K-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "M8HG24-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "M8PBFT-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "MBJ2FZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MBKVH5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MDKRZP-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MG7VGW-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MGFJD4-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "MKJT6P-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MKLKD9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MLX1ZJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MN5HFS-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MN6T14-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MNRMJB-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "MPFXLR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MPVQSK-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MQ0Q63-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "MQHV2B-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MSQWN0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MSXBDH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MTD0MH-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MTTYT9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MX112H-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MX3GQS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MXFCN7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MYKWY3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "MZ48NX-S",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "N0BB5H-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N1LPGN-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "N21RP7-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "N2DR74-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N2FYG6-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "N3CPKG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N42P6T-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N4SBSD-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N685T0-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "N6LTLJ-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "N7BNJ9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N90NHY-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "N9L3S9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NBTZZT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NCJ7T1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NCV48Y-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "NDH76D-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NDK5Q0-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NF03WT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NFHRSF-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NFZR9K-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NG4792-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NGB7GF-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NGL4Y8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NGX9T8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NH6650-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NMNF98-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NMX0J3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NNSZM3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NNW4K2-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NQ4GKW-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NR9Y47-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NRTSXJ-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NSQLZS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NTXBNS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NVZ2DS-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NVZBQZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NW3VSJ-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "NWF99X-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "NWWG2Z-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "NZV4VX-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P3KRJQ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P3SZCF-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "P3YC1W-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P460X9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P4DWYP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P4H1MD-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P4K5F0-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P50JTH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P5RQX7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P64V4M-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "P6LZC5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P725LM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P75WT7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "P8458B-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "PBTF2H-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PCGC25-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PCWS29-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PDXRY1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PFKDCG-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PHSGCL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PJ2HL0-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "PKGX2G-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PKLVN6-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PKQGPW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PLL7Z2-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PP7TFK-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PP7XLM-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "PQHZNV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PQN6PX-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PQN8QR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PRH6FB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PS6HY7-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PS8270-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PSSFHF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PSYF9D-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PTWC02-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PV5HMV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PVP0CL-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PWL4JG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "PXTHKG-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "PZFSLT-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "Q07XJ8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q1DPRT-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q1THK6-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "Q261T9-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "Q3PP8K-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q3X0Z3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q6S9J5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q7BP1X-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q7W8H7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q84BZX-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "Q9TFT8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QBRCZD-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QBWSCJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QDDP1S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QDZWPS-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "QF5D0S-R",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "QFKRH8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QFR28X-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QG3R2J-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QGQB0G-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QGR9LZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QGW4YL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QHKX4Q-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QHV4RB-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QK0P28-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QK7233-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QKR1BW-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "QLNTN9-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "QM0SXY-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QQ7LY8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QQHCB4-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QQNZ8N-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QS50XT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QSCCF1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QWWYT8-R",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "QX7WXS-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "QY9M38-R",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "R03ZN6-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R0RRKZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R11GNM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R1M0KJ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R1XVDV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R2L0LH-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R354JX-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R38CPX-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R3C7H1-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R3ZHXP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R4GKBK-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R4RN7R-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "R514TZ-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "R57MJD-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R5D07X-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R5L0XR-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R5RTNV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "R817CB-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "R98TG5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RB3GG6-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RBKR97-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RF5456-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RFPSVW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RG4NN3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RJLMRM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RK0NY5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RKLX5R-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RKNCGM-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "RKWK39-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RL94QQ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RLQJLM-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RN01PG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RN30HC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RNKCHG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RNR5P0-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RPB9MF-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RPCHD1-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "RPV09W-R",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "RQ28G3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RQMQF2-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RR1SJH-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RR3NLR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RTHYR1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RV77G2-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RW0MTS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RX09FP-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RX6N04-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RXK563-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RXQXCR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "RZ36W7-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "S01GDF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S175N3-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S1JW24-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "S2LM3H-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "S3F3D1-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S3XD40-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S52LPG-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S5D2M6-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S5K9Q7-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S5M30T-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "S77TSF-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "S96TG0-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "SCGTZV-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "SCM4BX-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SDPPDL-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SF51PV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SFFY6W-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SK4WW5-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SP8SV3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SPHZ1C-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SPL8GK-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SPV8V5-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SQQLYV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SSPTJ3-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "STDZVY-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SW29KZ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SWWRKD-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SWYTQF-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SX1PPM-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "SXQBXW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "SY61L8-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "SZCCWC-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "T07BVB-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T10N0V-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T1CHMZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T1FVVW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T1X88B-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T1XLB2-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "T27YH6-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T309FJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T3M6B7-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T3VT2M-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T3YGJC-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T3Z00B-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T46XQC-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T5NS4C-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T7BPVR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "T7S378-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "T7YXW4-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TCR3WM-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TD0XJR-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "TF29PJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TFS0G8-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TG17XR-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TGJ45L-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TH6SBS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "THM2PC-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TLRQ97-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TMC348-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "TMMCLV-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TNQ6T4-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TPYL7D-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TSRQSJ-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TSW17S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TTHVY8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TTNL0S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TTQ3DP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TXHY7D-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "TXM732-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TZGYZ0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TZR932-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "TZTTCX-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V11F7C-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V1Y7SY-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V3C9J0-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V3F22W-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V51Q3Y-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "V55CRX-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "V5C6CX-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "V725PW-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V8BG37-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "V8MWMM-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "V8V83Y-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "V8ZS6S-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VBZSR3-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VC2B85-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "VCVCD4-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "VFXJK0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VGLCW4-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VGSW76-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VHBGLH-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VHL9NZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VJ2SFS-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VJYX23-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "VKXG5L-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VL01D9-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "VLPV41-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VMZC4N-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VND6NQ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VNPN96-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VNR8GV-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VNS37Y-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "VPGSWD-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VPX65W-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "VRY2D0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VS5HBT-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "VT9SDN-S",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "VTMTR9-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VV3FY9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VV415Z-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VVSV4S-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VW38K1-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "VY74XQ-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "VZ3KCH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W023CW-R",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "W0CQRY-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W0QFPH-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W12PMJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W14Z6X-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "W1Y0ZC-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W37YJ9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W52M83-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W5R553-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W74J75-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W74NH9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W7V2WZ-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W8MYYX-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "W8QV7J-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WBSS3B-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WCBNFB-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "WCH38V-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WCNF1G-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WDD68M-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WDNMY7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WGYLL0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WH9DFD-L",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   },
   {
     "security_id": "WHKQSP-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WJBXYD-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WJRKFN-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WK8QG0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WK9T6Q-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WLMTG7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WM98DC-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WM9NF0-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WPG99B-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WPKKGB-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WPSFW2-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "WPVHHQ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WPWP57-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WRK2T6-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WS5QDN-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WSGQVC-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WV3QPT-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WVCQ9P-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WVSX80-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WWMQWG-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "WWV2FW-L",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "WXX9S0-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "WZBFR7-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WZDG0L-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "WZH3YX-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X0CSKR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X0Q9RQ-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X0X1YC-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X29M28-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X2FTZ6-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "X5SZJR-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X6GFGW-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X7BZL9-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X85GWX-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X8BLZ0-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X8MGCV-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "X9W28C-L",
-    "historical_entity_id": "0R8FXP-E",
-    "engine_entity_id": "04MN7K-E",
+    "restricted_cid": "0R8FXP-E",
+    "security_cid": "04MN7K-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "XB4LGD-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XBHPSV-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XC2YBV-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XC8K86-S",
-    "historical_entity_id": "00D4J3-E",
-    "engine_entity_id": "0L88SM-E",
+    "restricted_cid": "00D4J3-E",
+    "security_cid": "0L88SM-E",
     "merge_date": "2026-09-16"
   },
   {
     "security_id": "XF9718-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XHP2F3-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XJDSZN-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XKC309-S",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XL69LJ-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XLJYN8-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XMC802-L",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XMNM44-R",
-    "historical_entity_id": "0B0D2Q-E",
-    "engine_entity_id": "066L2H-E",
+    "restricted_cid": "0B0D2Q-E",
+    "security_cid": "066L2H-E",
     "merge_date": "2018-03-13"
   },
   {
     "security_id": "XN8N6S-L",
-    "historical_entity_id": "07GS55-E",
-    "engine_entity_id": "04DG9L-E",
+    "restricted_cid": "07GS55-E",
+    "security_cid": "04DG9L-E",
     "merge_date": "2026-05-31"
   },
   {
     "security_id": "XQ8SQ2-S",
-    "historical_entity_id": "06BX4S-E",
-    "engine_entity_id": "04CSMB-E",
+    "restricted_cid": "06BX4S-E",
+    "security_cid": "04CSMB-E",
     "merge_date": "2025-10-25"
   }
 ]
