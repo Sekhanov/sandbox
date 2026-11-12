@@ -9,9 +9,9 @@
 --   status_now      - status after this run
 BEGIN;
 
-WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
+WITH cfg AS (SELECT current_setting('missed_restriction.client_rules')::jsonb -> 0 -> 'rules' AS doc),
 fixes AS (
-    SELECT * FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
+    SELECT * FROM jsonb_to_recordset(current_setting('missed_restriction.candidates')::jsonb)
                   AS x(transaction_id text, current_status text, proposed_status text, remediable boolean)
     WHERE remediable
 ),
@@ -32,7 +32,7 @@ target AS (  -- trades still safe to change; the result below shows the skipped 
       AND NOT EXISTS (SELECT 1 FROM bk_txn_extra p                                                          -- no preclear link
                       WHERE p.transaction_id = s.transaction_id AND p.is_active IS NOT FALSE
                         AND p.extra_type_id IN (SELECT extra_type_id FROM types WHERE attribute_type = 'MATCHING_PRE_CLEAR_ID'))
-      AND NOT EXISTS (SELECT 1 FROM public.remediation_cor11327_status_backup b                              -- not changed yet
+      AND NOT EXISTS (SELECT 1 FROM public.missed_restriction_status_backup b                              -- not changed yet
                       WHERE b.transaction_id = f.transaction_id AND b.rolled_back_at IS NULL)
     FOR UPDATE OF s
 ),
@@ -51,7 +51,7 @@ new_comment AS (
     FROM target t, support u
     RETURNING extra_id, transaction_id
 )
-INSERT INTO public.remediation_cor11327_status_backup
+INSERT INTO public.missed_restriction_status_backup
        (transaction_id, old_extra_id, old_status, new_status, new_status_extra_id, new_comment_extra_id)
 SELECT t.transaction_id, t.old_extra_id, t.old_status, t.new_status, ns.extra_id, nc.extra_id
 FROM target t JOIN new_status ns USING (transaction_id) JOIN new_comment nc USING (transaction_id);
@@ -60,9 +60,9 @@ FROM target t JOIN new_status ns USING (transaction_id) JOIN new_comment nc USIN
 SELECT f.transaction_id, f.current_status, f.proposed_status, b.transaction_id IS NOT NULL AS applied,
        (SELECT string_agg(e.attribute_value, ';') FROM bk_txn_extra e JOIN bk_txn_extra_types t USING (extra_type_id)
         WHERE e.transaction_id = f.transaction_id AND e.is_active AND t.attribute_type = 'STATUS') AS status_now
-FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
+FROM jsonb_to_recordset(current_setting('missed_restriction.candidates')::jsonb)
      AS f(transaction_id text, current_status text, proposed_status text, remediable boolean)
-LEFT JOIN public.remediation_cor11327_status_backup b ON b.transaction_id = f.transaction_id AND b.applied_at = now()
+LEFT JOIN public.missed_restriction_status_backup b ON b.transaction_id = f.transaction_id AND b.applied_at = now()
 WHERE f.remediable;
 
 -- Dry run. Under the CNG use COMMIT (app: --commit), then ask for the PERSONAL_TRADE cache refresh.

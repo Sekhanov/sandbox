@@ -44,7 +44,7 @@ Files go to `out/` (`--dir <folder>` to change). Each result is also saved as CS
 Undo: `npm run 06`, then `npm run 06 -- --commit`, then the cache refresh.
 
 ```sql
-CREATE TABLE public.remediation_cor11327_status_backup (
+CREATE TABLE public.missed_restriction_status_backup (
     transaction_id text NOT NULL, old_extra_id int NOT NULL, old_status text, new_status text NOT NULL,
     new_status_extra_id int NOT NULL, new_comment_extra_id int NOT NULL,
     applied_at timestamptz NOT NULL DEFAULT now(), rolled_back_at timestamptz

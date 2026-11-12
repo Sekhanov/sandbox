@@ -17,9 +17,9 @@
 --   preclear_id          - linked preclear, if any
 --   review_reason        - why a person must decide (empty: safe)
 --   remediable           - true: 05 fixes it
-WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),  -- client_rules.json
+WITH cfg AS (SELECT current_setting('missed_restriction.client_rules')::jsonb -> 0 -> 'rules' AS doc),  -- client_rules.json
 ref_sec_hist AS (  -- security_hist_entity.json as rows
-    SELECT * FROM jsonb_to_recordset(current_setting('cor11327.security_hist_entity')::jsonb)
+    SELECT * FROM jsonb_to_recordset(current_setting('missed_restriction.security_hist_entity')::jsonb)
                   AS x(security_id text, restricted_cid text, security_cid text, merge_date text)
 ),
 rules AS (  -- client rules in engine order: list name patterns and the status an IN hit sets
@@ -47,7 +47,7 @@ trades AS (  -- trades of the affected securities that went through the restrict
     JOIN bk_txn_extra rs ON rs.transaction_id = sec.transaction_id AND rs.is_active IS NOT FALSE
                         AND rs.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'RULE_STATUS')
                         AND rs.attribute_value LIKE '%RESTRICTION_CHECK_%'
-                        AND rs.created_date < current_setting('cor11327.fix_date')::date
+                        AND rs.created_date < current_setting('missed_restriction.fix_date')::date
     JOIN bk_txn bt ON bt.transaction_id = sec.transaction_id
     WHERE sec.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'SECURITY_ID')
       AND sec.is_active IS NOT FALSE

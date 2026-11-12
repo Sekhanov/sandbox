@@ -38,11 +38,11 @@ const env = (key) => process.env[`${script.db}_${key}`];
 const db = new pg.Client({ host: env('HOST'), port: env('PORT'), database: env('DATABASE') ?? env('NAME'), user: env('USERNAME'), password: env('PASSWORD') });
 await db.connect();
 try {
-  // Inputs as session settings cor11327.<name>, read in SQL with current_setting(); nothing is created in the DB.
+  // Inputs as session settings missed_restriction.<name>, read in SQL with current_setting(); nothing is created in the DB.
   const settings = [['client_id', opt.client], ['fix_date', opt['fix-date']],
     ...(script.inputs ?? []).map((f) => [path.parse(f).name, fs.readFileSync(path.join(opt.dir, f), 'utf8')])];
   for (const [key, value] of settings) {
-    if (value !== undefined) await db.query('SELECT set_config($1, $2, false)', [`cor11327.${key}`, value]);
+    if (value !== undefined) await db.query('SELECT set_config($1, $2, false)', [`missed_restriction.${key}`, value]);
   }
 
   // Run the whole script. --commit turns the final dry-run ROLLBACK into COMMIT.

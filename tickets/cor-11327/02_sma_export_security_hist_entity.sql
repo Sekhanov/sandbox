@@ -6,7 +6,7 @@
 --   restricted_cid - CID stored on the restriction
 --   security_cid   - CID of the security in SMA; the engine searched by this one
 --   merge_date     - date of the CID change
-WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('cor11327.restricted_cids')::jsonb) AS x(cid text)),
+WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('missed_restriction.restricted_cids')::jsonb) AS x(cid text)),
 pairs AS (
     -- the restriction has the old CID (A1), the security now has the new CID (B2)
     SELECT merged_factset_entity_id AS restricted_cid, to_factset_entity_id AS security_cid, merge_date
