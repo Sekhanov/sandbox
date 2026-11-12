@@ -1,10 +1,11 @@
 -- Client DB, read-only. Inputs: client_rules.json, security_hist_entity.json, --fix-date. Output: candidates.json (for 05).
 -- Trades processed before the fix that missed a restriction on the other entity ID of their security.
 -- One row per trade; remediable = true means safe to fix with 05, otherwise review_reason says why not.
-WITH cfg AS (  -- input files as rows
-    SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
-ref_sec_hist AS (SELECT * FROM jsonb_to_recordset(current_setting('cor11327.security_hist_entity')::jsonb)
-                 AS x(security_id text, historical_entity_id text, engine_entity_id text, merge_date text)),
+WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),  -- client_rules.json
+ref_sec_hist AS (  -- security_hist_entity.json as rows
+    SELECT * FROM jsonb_to_recordset(current_setting('cor11327.security_hist_entity')::jsonb)
+                  AS x(security_id text, historical_entity_id text, engine_entity_id text, merge_date text)
+),
 rules AS (  -- client rules in engine order: list name patterns and the status an IN hit sets
     SELECT r.ord AS rule_index,
            ARRAY(SELECT jsonb_array_elements_text(CASE jsonb_typeof(r.rule -> 'LIST_NAME')

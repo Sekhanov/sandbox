@@ -39,16 +39,15 @@ const db = new pg.Client({ host: env('HOST'), port: env('PORT'), database: env('
 await db.connect();
 try {
   // Inputs as session settings cor11327.<name>, read in SQL with current_setting(); nothing is created in the DB.
-  const settings = { client_id: opt.client, fix_date: opt['fix-date'] };
-  for (const file of script.inputs ?? []) settings[path.parse(file).name] = fs.readFileSync(path.join(opt.dir, file), 'utf8');
-  for (const [key, value] of Object.entries(settings)) {
+  const settings = [['client_id', opt.client], ['fix_date', opt['fix-date']],
+    ...(script.inputs ?? []).map((f) => [path.parse(f).name, fs.readFileSync(path.join(opt.dir, f), 'utf8')])];
+  for (const [key, value] of settings) {
     if (value !== undefined) await db.query('SELECT set_config($1, $2, false)', [`cor11327.${key}`, value]);
   }
 
   // Run the whole script. --commit turns the final dry-run ROLLBACK into COMMIT.
-  let sql = fs.readFileSync(path.join(sqlDir, sqlFile), 'utf8');
-  if (opt.commit) sql = sql.replace(/ROLLBACK;\s*$/, 'COMMIT;');
-  const results = [].concat(await db.query(sql)).filter((r) => r.fields.length);
+  const sql = fs.readFileSync(path.join(sqlDir, sqlFile), 'utf8');
+  const results = [].concat(await db.query(opt.commit ? sql.replace(/ROLLBACK;\s*$/, 'COMMIT;') : sql)).filter((r) => r.fields.length);
 
   // Print and save each result; the last one is also the output file.
   results.forEach((r, i) => {

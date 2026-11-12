@@ -3,24 +3,23 @@
 -- each change saved in the backup table (for 06). Dry run unless --commit.
 BEGIN;
 
-WITH cfg AS (  -- input files as rows
-    SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
-approved AS (SELECT transaction_id, current_status AS expected_status, proposed_status AS new_status
-             FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
+WITH cfg AS (SELECT current_setting('cor11327.client_rules')::jsonb -> 0 -> 'rules' AS doc),
+fixes AS (
+    SELECT * FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
                   AS x(transaction_id text, current_status text, proposed_status text, remediable boolean)
-             WHERE remediable),
+    WHERE remediable
+),
 types AS (SELECT attribute_type, extra_type_id FROM bk_txn_extra_types),
 support AS (SELECT user_key FROM userdb.users WHERE email_address = 'support@paragondatalabs.com'),
-target AS (  -- approved trades that are safe to change; the result below lists the skipped ones
-    SELECT a.transaction_id, s.extra_id AS old_extra_id, s.attribute_value AS old_status, a.new_status
-    FROM approved a
-    JOIN bk_txn bt ON bt.transaction_id = a.transaction_id
+target AS (  -- trades still safe to change; the result below shows the skipped ones
+    SELECT f.transaction_id, s.extra_id AS old_extra_id, s.attribute_value AS old_status, f.proposed_status AS new_status
+    FROM fixes f
+    JOIN bk_txn bt ON bt.transaction_id = f.transaction_id
                   AND lower(bt.pdl_client_code) = lower(NULLIF((SELECT doc ->> 'client_id' FROM cfg), ''))  -- this client
-    JOIN bk_txn_extra s ON s.transaction_id = a.transaction_id AND s.is_active
+    JOIN bk_txn_extra s ON s.transaction_id = f.transaction_id AND s.is_active
                        AND s.extra_type_id IN (SELECT extra_type_id FROM types WHERE attribute_type = 'STATUS')
-                       AND s.attribute_value = a.expected_status                                           -- unchanged since review
-    WHERE a.new_status <> a.expected_status
-      AND a.new_status IN (SELECT value FROM cfg, jsonb_each_text(doc -> 'trade_status_config'))            -- known status
+                       AND s.attribute_value = f.current_status                                            -- unchanged since 04
+    WHERE f.proposed_status IN (SELECT value FROM cfg, jsonb_each_text(doc -> 'trade_status_config'))       -- known status
       AND NOT EXISTS (SELECT 1 FROM bk_txn_extra o                                                          -- one active status
                       WHERE o.transaction_id = s.transaction_id AND o.extra_type_id = s.extra_type_id
                         AND o.is_active AND o.extra_id <> s.extra_id)
@@ -28,7 +27,7 @@ target AS (  -- approved trades that are safe to change; the result below lists 
                       WHERE p.transaction_id = s.transaction_id AND p.is_active IS NOT FALSE
                         AND p.extra_type_id IN (SELECT extra_type_id FROM types WHERE attribute_type = 'MATCHING_PRE_CLEAR_ID'))
       AND NOT EXISTS (SELECT 1 FROM public.remediation_cor11327_status_backup b                              -- not changed yet
-                      WHERE b.transaction_id = a.transaction_id AND b.rolled_back_at IS NULL)
+                      WHERE b.transaction_id = f.transaction_id AND b.rolled_back_at IS NULL)
     FOR UPDATE OF s
 ),
 deactivated AS (UPDATE bk_txn_extra e SET is_active = false FROM target t WHERE e.extra_id = t.old_extra_id),
@@ -51,16 +50,14 @@ INSERT INTO public.remediation_cor11327_status_backup
 SELECT t.transaction_id, t.old_extra_id, t.old_status, t.new_status, ns.extra_id, nc.extra_id
 FROM target t JOIN new_status ns USING (transaction_id) JOIN new_comment nc USING (transaction_id);
 
--- Result: every remediable trade, whether it changed, and its status now.
-WITH approved AS (SELECT transaction_id, current_status AS expected_status, proposed_status AS new_status
-                  FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
-                       AS x(transaction_id text, current_status text, proposed_status text, remediable boolean)
-                  WHERE remediable)
-SELECT a.*, b.transaction_id IS NOT NULL AS applied,
+-- Result: every remediable trade, whether it changed now, and its status now.
+SELECT f.transaction_id, f.current_status, f.proposed_status, b.transaction_id IS NOT NULL AS applied,
        (SELECT string_agg(e.attribute_value, ';') FROM bk_txn_extra e JOIN bk_txn_extra_types t USING (extra_type_id)
-        WHERE e.transaction_id = a.transaction_id AND e.is_active AND t.attribute_type = 'STATUS') AS status_now
-FROM approved a
-LEFT JOIN public.remediation_cor11327_status_backup b ON b.transaction_id = a.transaction_id AND b.applied_at = now();
+        WHERE e.transaction_id = f.transaction_id AND e.is_active AND t.attribute_type = 'STATUS') AS status_now
+FROM jsonb_to_recordset(current_setting('cor11327.candidates')::jsonb)
+     AS f(transaction_id text, current_status text, proposed_status text, remediable boolean)
+LEFT JOIN public.remediation_cor11327_status_backup b ON b.transaction_id = f.transaction_id AND b.applied_at = now()
+WHERE f.remediable;
 
 -- Dry run. Under the CNG use COMMIT (app: --commit), then ask for the PERSONAL_TRADE cache refresh.
 ROLLBACK;
