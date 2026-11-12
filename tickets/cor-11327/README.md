@@ -56,3 +56,9 @@ CREATE TABLE public.remediation_cor11327_status_backup (
 - Chains of ID changes are not covered (step `00`).
 - `04` uses today's rules: there is no history of which rule version was active when.
 - Deleted restrictions have no deletion date, so their trades always go to review.
+
+## Why `migdb` is read
+
+A restriction deleted in the app can still have been active on the trade date, so its trades are affected.
+- Before release AWS2609, a delete removed the restriction from `disclosures` / `attribute_extra`. The only copy is in `migdb.deleted_disclosures` / `migdb.deleted_attribute_extra`.
+- Since AWS2609 (COR-11301), a delete copies to `migdb` and sets `is_active = false`, so the restriction is in both places. `04` counts it once and marks it deleted.

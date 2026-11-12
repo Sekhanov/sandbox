@@ -38,8 +38,8 @@ trades AS (  -- trades of the affected securities that went through the restrict
       AND sec.is_active IS NOT FALSE
       AND lower(bt.pdl_client_code) = lower((SELECT doc ->> 'client_id' FROM cfg))
 ),
-restrictions AS MATERIALIZED (  -- restrictions whose CID is a missed ID, live or deleted
-    SELECT DISTINCT a.attribute_id AS disc_id, a.attribute_value AS cid, a.deleted AS restriction_deleted
+restrictions AS MATERIALIZED (  -- restrictions whose CID is a missed ID; deleted if a copy is in migdb (soft-deleted ones are in both)
+    SELECT a.attribute_id AS disc_id, a.attribute_value AS cid, bool_or(a.deleted) AS restriction_deleted
     FROM (SELECT attribute_id, attribute_extra_type_id, attribute_value, false AS deleted FROM attribute_extra
           UNION ALL
           SELECT attribute_id, attribute_extra_type_id, attribute_value, true FROM migdb.deleted_attribute_extra) a
@@ -48,6 +48,7 @@ restrictions AS MATERIALIZED (  -- restrictions whose CID is a missed ID, live o
     WHERE a.attribute_extra_type_id IN (SELECT attribute_extra_type_id FROM attribute_extra_types WHERE attribute_type = 'CID')
       AND d.disc_type IN (SELECT disc_type_id FROM disclosure_types WHERE disc_type = 'RESTRICTION')
       AND a.attribute_value IN (SELECT historical_entity_id FROM ref_sec_hist)
+    GROUP BY a.attribute_id, a.attribute_value
 ),
 rattr AS MATERIALIZED (  -- all fields of those restrictions, read once (the engine ignores is_active)
     SELECT a.attribute_id, t.attribute_type, a.attribute_value, a.created_date
