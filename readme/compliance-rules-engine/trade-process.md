@@ -277,20 +277,50 @@ Hand-off:
 
 ### 6.2 Compliance rules (TypeScript, per trade)
 
-The rules run in this order. A rule can finish the trade early:
-1. `cookData`: loads security details and checks the account exists in the client `account_view`. **Throws** if either is missing.
-2. `managedAccount`: managed accounts can skip the rules.
-3. `nonTradeCheck`: status is not `TRADE` (RNR) → preclearance not needed.
-4. `usGovCheck`: US government security → preclearance not needed.
-5. `holdingPeriodPreCheck`
-6. `preclearNotNeeded`: by security type, region, universe or option close.
-7. `restrictionCheck`: restricted list.
-8. `sicCheck`: industry rules.
-9. `preclearMatch`: did the employee get preclearance for this trade?
+Code: `serverless/public/functions/tradeProcessV2/tradeProcess.ts:88-121`. The steps run in this order; ■ = the trade is finished, the next steps are skipped.
 
-The results:
-- `match_status`: what the client sees.
-- `trade_process_outcome`: an audit trail such as `|COOK_DATA:true|…`.
+| # | Step | Sets `match_status` | Line |
+|---|---|---|---|
+| 1 | `cookData`: loads the security from SMA, checks the account in the client `account_view`. **Throws** if either is missing. | `PENDING_MATCH_STATUS` (start) | `:156` |
+| 2 | `managedAccount`: `ACCOUNT_MANAGED = Yes` and `MANAGED_ACCOUNT_APPLY_RULES` off | `MANAGED_ACCOUNT` ■ | `:187` |
+| 3 | `nonTradeCheck`: status is not `TRADE` (RNR) | `PRECLR_NOT_NEEDED` ■ | `:207` |
+| 4 | `usGovCheck`: `PRECLEAR_NOT_NEEDED_US_GOV` and the security is US government | `PRECLR_NOT_NEEDED` ■ | `:230` |
+| 5 | `holdingPeriodPreCheck`: only with `HOLDING_PERIOD_ORDER = BEFORE_PRECLEAR_NOT_NEEDED` | `PENDING_MATCH_STATUS` ■ | `:433` |
+| 6 | `preclearNotNeeded`: by security type, region, universe or option close | `PRECLR_NOT_NEEDED` ■ | `:284-306` |
+| 7 | `restrictionCheck`: rules in `RESTRICTION_RULE`, see below | the rule's `ACTION` | `:367` |
+| 8 | `sicCheck`: `SIC_RULES` by the security's SIC code; **overwrites** the status | the rule's `ACTION` | `:392-397` |
+| 9 | `preclearMatch`: runs only if the status is still `PENDING_MATCH_STATUS` | `MATCHING_RESULTS.ACTION` (usually `MATCH_STATUS`) | `:569`, `:594` |
+
+**Statuses.** `match_status` holds a *key*; the client's `trade_status_config` gives the name saved as `STATUS`:
+
+| Key | Typical name | Meaning |
+|---|---|---|
+| `PENDING_MATCH_STATUS` | Pending Match | Needs a preclear; none matched yet |
+| `MATCH_STATUS` | Matched | An approved preclear matched; the trade is linked to it |
+| `PRECLR_NOT_NEEDED` | Preclear Not Needed | Exempt; rules skipped |
+| `MANAGED_ACCOUNT` | Managed Account | Managed account; rules skipped |
+| any other key | e.g. Restricted | Set by a restriction or SIC rule. **Not `PENDING_MATCH_STATUS`, so preclear matching is skipped.** |
+
+**Restriction check** (`restrictionCheck`, `:316-371`):
+- Restrictions are disclosures of type `RESTRICTION` in the client DB (`disclosures` + `attribute_extra`: `CID`, `SECURITY_ID`, `RESTRICTION_LIST_ID`, `STATUS`). Lists: `restriction_lists`.
+- Found by the trade's `SECURITY_ID` or its company `CID` from SMA (`all_entity_ids`, fallback `entity_id`). `is_active` is ignored (`storage/repositories/clientDb/RestrictionRepository.ts:105-123`).
+- Applies on the trade date: an `Active` status row by the end of the day, no `Cleared`/`Inactive` before it (`RestrictionRepository.ts:29-41`).
+- Each rule (`trade_configs_v2.parameters.RESTRICTION_RULE`):
+  - `LIST_NAME`: list names, matched as SQL `LIKE` (`%`, `_` wildcards, case-sensitive) — `RestrictionRepository.ts:28`, `services/AttributeMatcher.ts:102-114`.
+  - `ACTION.IN`: status key when the trade **is** on the list; `ACTION.NOT_IN`: when it **is not** (allow-list). `false` = no action.
+  - `ATTRIBUTE_TYPE` / `AUTH0_CHECK_RULE`: optional employee filters; if `AUTH0_CHECK_RULE` is false the rule is skipped.
+- Rules run in order; **the first rule with an action wins** (`break`).
+
+Example: `{"LIST_NAME": ["Restricted List"], "ACTION": {"IN": "PENDING_MATCH_STATUS", "NOT_IN": false}}` — a hit sets Pending Match, which is also the start status, so the trade still goes to preclear matching.
+
+**Preclear match** (`preclearMatch`, `:441-600`): looks for the owner's approved preclears for the same security within `APPROVAL_WINDOW_BUS_DAYS` (or `TIME_BASED_APPROVAL_WINDOW` / `RULE_TIME`), then account, transaction type and quantity. `MATCHING_RESULTS` maps the combination of these checks to a status. A holding-period hit sets `PENDING_MATCH_STATUS`.
+
+**Results:**
+- `match_status` → `bk_txn_extra` row `STATUS` (only one active; later changes add a new row and set the old one inactive).
+- `trade_process_outcome` → `bk_txn_extra` row `RULE_STATUS` and `trade_data.rule_status`. Audit trail, e.g.:
+  `|COOK_DATA:true|MANAGED_ACCT:false|…|RESTRICTION_CHECK_1: true (On Restricted List)|SIC_CHECK:false|OWNER_MATCH:1|MATCHING_RESULTS:true`
+  `RESTRICTION_CHECK_<n>`: rule number; `true`/`false` = action taken; `(On <lists>)` / `(Not on <lists>)` / `(AUTH0_FALSE)`.
+- Matched preclear → `bk_txn_extra` row `MATCHING_PRE_CLEAR_ID`.
 
 ### 6.3 Save (`loadToTarget`)
 
