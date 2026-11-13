@@ -9,31 +9,33 @@
 BEGIN;
 
 WITH target AS ( -- rows added by 05 still active (a later change makes them inactive)
-    SELECT b.transaction_id, b.old_extra_id, b.old_comment_extra_ids, b.new_status_extra_id, b.new_comment_extra_id
-    FROM public.missed_restriction_status_backup b
-    JOIN bk_txn_extra ns ON ns.extra_id = b.new_status_extra_id AND ns.is_active
-    JOIN bk_txn_extra nc ON nc.extra_id = b.new_comment_extra_id AND nc.is_active
-    WHERE b.rolled_back_at IS NULL),
+    SELECT backup.transaction_id, backup.old_extra_id, backup.old_comment_extra_ids,
+           backup.new_status_extra_id, backup.new_comment_extra_id
+    FROM public.missed_restriction_status_backup backup
+    JOIN bk_txn_extra new_status ON new_status.extra_id = backup.new_status_extra_id AND new_status.is_active
+    JOIN bk_txn_extra new_comment ON new_comment.extra_id = backup.new_comment_extra_id AND new_comment.is_active
+    WHERE backup.rolled_back_at IS NULL),
 reactivated AS ( -- old status and comments back
-    UPDATE bk_txn_extra e SET is_active = true
-    FROM target t
-    WHERE e.extra_id = t.old_extra_id OR e.extra_id = ANY (t.old_comment_extra_ids)),
+    UPDATE bk_txn_extra extra SET is_active = true
+    FROM target
+    WHERE extra.extra_id = target.old_extra_id OR extra.extra_id = ANY (target.old_comment_extra_ids)),
 removed AS ( -- rows added by 05
-    DELETE FROM bk_txn_extra e USING target t
-    WHERE e.extra_id IN (t.new_status_extra_id, t.new_comment_extra_id))
-UPDATE public.missed_restriction_status_backup b
+    DELETE FROM bk_txn_extra extra USING target
+    WHERE extra.extra_id IN (target.new_status_extra_id, target.new_comment_extra_id))
+UPDATE public.missed_restriction_status_backup backup
 SET rolled_back_at = now()
-FROM target t
-WHERE b.transaction_id = t.transaction_id AND b.rolled_back_at IS NULL;
+FROM target
+WHERE backup.transaction_id = target.transaction_id AND backup.rolled_back_at IS NULL;
 
 -- Result: every changed trade, whether it was rolled back now, and its status now.
-SELECT b.transaction_id, b.old_status, b.new_status,
-       b.rolled_back_at IS NOT NULL AS rolled_back,
-       (SELECT string_agg(e.attribute_value, ';')
-        FROM bk_txn_extra e JOIN bk_txn_extra_types t USING (extra_type_id)
-        WHERE e.transaction_id = b.transaction_id AND e.is_active IS NOT FALSE AND t.attribute_type = 'STATUS') AS status_now
-FROM public.missed_restriction_status_backup b
-WHERE b.rolled_back_at IS NULL OR b.rolled_back_at = now();
+SELECT backup.transaction_id, backup.old_status, backup.new_status,
+       backup.rolled_back_at IS NOT NULL AS rolled_back,
+       (SELECT string_agg(status.attribute_value, ';')
+        FROM bk_txn_extra status JOIN bk_txn_extra_types status_type USING (extra_type_id)
+        WHERE status.transaction_id = backup.transaction_id AND status.is_active IS NOT FALSE
+          AND status_type.attribute_type = 'STATUS') AS status_now
+FROM public.missed_restriction_status_backup backup
+WHERE backup.rolled_back_at IS NULL OR backup.rolled_back_at = now();
 
 -- Dry run. Under the CNG use COMMIT (app: --commit), then ask for the PERSONAL_TRADE cache refresh.
 ROLLBACK;
