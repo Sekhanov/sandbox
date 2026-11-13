@@ -3,10 +3,10 @@
 -- One row per trade; remediable = true means safe to fix with 05, otherwise review_reason says why not.
 -- Cost: one pass over the SECURITY_ID rows of bk_txn_extra (no index on the value); everything else is by index or small.
 -- Result columns:
---   transaction_id, trade_id, trade_date, account_last4, symbol, security_name, transaction_type, quantity - the trade
+--   transaction_id, trade_date, security_name - the trade
 --   security_id, security_cid, restricted_cid, merge_date - from 02
 --   rule_status          - engine result text (RULE_STATUS)
---   processed_at         - when the engine wrote it (US Eastern, as the restriction dates)
+--   processed_at         - when the engine wrote it
 --   first_fired_rule     - first rule that fired then (empty: none)
 --   disc_id, restriction_deleted, restriction_list_name - the missed restriction
 --   rule_index           - first rule that would have changed the result
@@ -26,7 +26,7 @@ WITH config AS ( -- client_rules.json
 sec_hist AS ( -- security_hist_entity.json
     SELECT *
     FROM jsonb_to_recordset(current_setting('missed_restriction.security_hist_entity')::jsonb)
-             AS security(security_id text, restricted_cid text, security_cid text, merge_date text)),
+             AS security(security_id text, restricted_cid text, security_cid text, merge_date date)),
 rules AS ( -- client rules in engine order
     SELECT client_rule.ord                                                                 AS rule_index,
            ARRAY(SELECT jsonb_array_elements_text(client_rule.rule -> 'LIST_NAME'))        AS list_patterns,
@@ -35,11 +35,10 @@ rules AS ( -- client rules in engine order
     FROM config, jsonb_array_elements(config.doc -> 'restriction_rules') WITH ORDINALITY client_rule(rule, ord)),
 txn_type AS (SELECT attribute_type, extra_type_id FROM bk_txn_extra_types),
 trades AS ( -- trades of those securities that the engine checked for restrictions before the fix
-    SELECT trade.transaction_id, trade.trade_id, trade.trade_date::date AS trade_date, right(trade.account_number, 4) AS account_last4,
-           trade.symbol, trade.security_name, trade.transaction_type, trade.quantity,
-           sec_hist.security_id, sec_hist.security_cid, sec_hist.restricted_cid, sec_hist.merge_date::date AS merge_date,
+    SELECT trade.transaction_id, trade.trade_date::date, trade.security_name,
+           sec_hist.security_id, sec_hist.security_cid, sec_hist.restricted_cid, sec_hist.merge_date,
            rule_status.attribute_value AS rule_status,
-           (rule_status.modified_date AT TIME ZONE 'UTC') AT TIME ZONE 'US/Eastern' AS processed_at, -- engine writes UTC, the app US Eastern; created_date is the trade date
+           rule_status.modified_date AS processed_at, -- created_date is the trade date
            (SELECT min(fired[1]::int)
             FROM regexp_matches(rule_status.attribute_value, 'RESTRICTION_CHECK_(\d+): true', 'g') fired) AS first_fired_rule
     FROM sec_hist
@@ -48,7 +47,7 @@ trades AS ( -- trades of those securities that the engine checked for restrictio
     JOIN bk_txn_extra rule_status ON rule_status.transaction_id = trade_security.transaction_id AND rule_status.is_active IS NOT FALSE
         AND rule_status.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'RULE_STATUS')
         AND rule_status.attribute_value LIKE '%RESTRICTION_CHECK_%'
-        AND (rule_status.modified_date AT TIME ZONE 'UTC') AT TIME ZONE 'US/Eastern' < current_setting('missed_restriction.fix_date')::date
+        AND rule_status.modified_date < current_setting('missed_restriction.fix_date')::date
     JOIN bk_txn trade ON trade.transaction_id = trade_security.transaction_id),
 restrictions AS MATERIALIZED ( -- restrictions.json, only those with a missed CID
     SELECT *
