@@ -1,6 +1,7 @@
 -- Client DB. Input: candidates.json (04). Fixes the rows with remediable = true.
--- Sets the new status as the app does: old STATUS row inactive, new STATUS + COMMENT rows,
--- each change saved in the backup table (for 06). Dry run unless --commit.
+-- Sets the new status as the engine's status change does (ExceptionsRepository.bulkUpdateExceptionStatus):
+-- active STATUS and COMMENT rows inactive, new STATUS + COMMENT rows. Each change is saved in the backup table (for 06).
+-- Dry run unless --commit.
 -- Result columns:
 --   transaction_id  - the trade
 --   current_status  - status found by 04
@@ -17,28 +18,36 @@ WITH fixes AS (
 types AS (SELECT attribute_type, extra_type_id FROM bk_txn_extra_types),
 support AS (SELECT user_key FROM userdb.users WHERE email_address = 'support@paragondatalabs.com'),
 target AS ( -- active status still the one 04 found (any change since, incl. this fix, adds a new status row)
-    SELECT f.transaction_id, s.extra_id AS old_extra_id, s.attribute_value AS old_status, f.proposed_status AS new_status
+    SELECT f.transaction_id, f.proposed_status AS new_status, u.user_key,
+           s.extra_id AS old_extra_id, s.attribute_value AS old_status,
+           ARRAY(SELECT c.extra_id FROM bk_txn_extra c
+                 WHERE c.transaction_id = f.transaction_id AND c.is_active IS NOT FALSE
+                   AND c.extra_type_id IN (SELECT extra_type_id FROM types WHERE attribute_type = 'COMMENT')) AS old_comment_extra_ids
     FROM fixes f
     JOIN bk_txn_extra s ON s.transaction_id = f.transaction_id AND s.is_active IS NOT FALSE
         AND s.extra_type_id IN (SELECT extra_type_id FROM types WHERE attribute_type = 'STATUS')
         AND s.attribute_value = f.current_status
+    CROSS JOIN support u -- no support user: nothing is changed
     FOR UPDATE OF s),
-deactivated AS (UPDATE bk_txn_extra e SET is_active = false FROM target t WHERE e.extra_id = t.old_extra_id),
+deactivated AS (
+    UPDATE bk_txn_extra e SET is_active = false
+    FROM target t
+    WHERE e.extra_id = t.old_extra_id OR e.extra_id = ANY (t.old_comment_extra_ids)),
 new_status AS (
     INSERT INTO bk_txn_extra (transaction_id, extra_type_id, attribute_value, created_by, modified_by, is_active)
-    SELECT t.transaction_id, (SELECT extra_type_id FROM types WHERE attribute_type = 'STATUS'), t.new_status, u.user_key, u.user_key, true
-    FROM target t, support u
+    SELECT t.transaction_id, (SELECT extra_type_id FROM types WHERE attribute_type = 'STATUS'), t.new_status, t.user_key, t.user_key, true
+    FROM target t
     RETURNING extra_id, transaction_id),
 new_comment AS (
     INSERT INTO bk_txn_extra (transaction_id, extra_type_id, attribute_value, created_by, modified_by, is_active)
     SELECT t.transaction_id, (SELECT extra_type_id FROM types WHERE attribute_type = 'COMMENT'),
            'Status re-evaluated: restriction on a merged FactSet entity ID was not applied at processing time',
-           u.user_key, u.user_key, true
-    FROM target t, support u
+           t.user_key, t.user_key, true
+    FROM target t
     RETURNING extra_id, transaction_id)
 INSERT INTO public.missed_restriction_status_backup
-    (transaction_id, old_extra_id, old_status, new_status, new_status_extra_id, new_comment_extra_id)
-SELECT t.transaction_id, t.old_extra_id, t.old_status, t.new_status, ns.extra_id, nc.extra_id
+    (transaction_id, old_extra_id, old_comment_extra_ids, old_status, new_status, new_status_extra_id, new_comment_extra_id)
+SELECT t.transaction_id, t.old_extra_id, t.old_comment_extra_ids, t.old_status, t.new_status, ns.extra_id, nc.extra_id
 FROM target t
 JOIN new_status ns USING (transaction_id)
 JOIN new_comment nc USING (transaction_id);

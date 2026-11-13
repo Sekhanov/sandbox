@@ -65,8 +65,9 @@ try {
     console.table(r.rows.slice(0, 20));
   });
   const last = results.at(-1);
+  if (script.single && !last?.rows.length) throw new Error(`Script ${name} returned no row`); // e.g. unknown client
   if (script.output && last) {
-    const data = script.single ? Object.values(last.rows[0] ?? {})[0] ?? null : last.rows;
+    const data = script.single ? Object.values(last.rows[0])[0] : last.rows;
     fs.writeFileSync(path.join(opt.dir, script.output), JSON.stringify(data, null, 2));
   }
 } finally {

@@ -6,7 +6,7 @@
 --   transaction_id, trade_id, trade_date, account_last4, symbol, security_name, transaction_type, quantity - the trade
 --   security_id, security_cid, restricted_cid, merge_date - from 02
 --   rule_status          - engine result text (RULE_STATUS)
---   processed_at         - when the engine wrote it
+--   processed_at         - when the engine wrote it (US Eastern, as the restriction dates)
 --   first_fired_rule     - first rule that fired then (empty: none)
 --   disc_id, restriction_deleted, restriction_list_name - the missed restriction
 --   rule_index           - first rule that would have changed the result
@@ -39,7 +39,7 @@ trades AS ( -- trades of those securities that the engine checked for restrictio
            bt.symbol, bt.security_name, bt.transaction_type, bt.quantity,
            h.security_id, h.security_cid, h.restricted_cid, h.merge_date::date AS merge_date,
            rs.attribute_value AS rule_status,
-           rs.modified_date   AS processed_at, -- created_date is the trade date
+           (rs.modified_date AT TIME ZONE 'UTC') AT TIME ZONE 'US/Eastern' AS processed_at, -- engine writes UTC, the app US Eastern; created_date is the trade date
            (SELECT min(m[1]::int)
             FROM regexp_matches(rs.attribute_value, 'RESTRICTION_CHECK_(\d+): true', 'g') m) AS first_fired_rule
     FROM sec_hist h
@@ -48,7 +48,7 @@ trades AS ( -- trades of those securities that the engine checked for restrictio
     JOIN bk_txn_extra rs ON rs.transaction_id = sec.transaction_id AND rs.is_active IS NOT FALSE
         AND rs.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'RULE_STATUS')
         AND rs.attribute_value LIKE '%RESTRICTION_CHECK_%'
-        AND rs.modified_date < current_setting('missed_restriction.fix_date')::date
+        AND (rs.modified_date AT TIME ZONE 'UTC') AT TIME ZONE 'US/Eastern' < current_setting('missed_restriction.fix_date')::date
     JOIN bk_txn bt ON bt.transaction_id = sec.transaction_id),
 restrictions AS MATERIALIZED ( -- restrictions.json, only those with a missed CID
     SELECT *

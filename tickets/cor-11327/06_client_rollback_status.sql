@@ -1,21 +1,26 @@
--- Client DB. Undoes 05 from the backup table: old status active again, rows added by 05 deleted.
--- Skips trades whose status changed after 05. Dry run unless --commit.
+-- Client DB. Undoes 05 from the backup table: old STATUS and COMMENT rows active again, rows added by 05 deleted.
+-- Skips trades whose status or comment changed after 05. Dry run unless --commit.
 -- Result columns:
 --   transaction_id - the trade
 --   old_status     - status before 05
 --   new_status     - status set by 05
---   rolled_back    - true: undone now; false: skipped (status changed after 05)
+--   rolled_back    - true: undone now; false: skipped (status or comment changed after 05)
 --   status_now     - status after this run
 BEGIN;
 
-WITH target AS ( -- trades changed by 05 whose status 05 set is still active (a later change makes it inactive)
-    SELECT b.transaction_id, b.old_extra_id, b.new_status_extra_id, b.new_comment_extra_id
+WITH target AS ( -- rows added by 05 still active (a later change makes them inactive)
+    SELECT b.transaction_id, b.old_extra_id, b.old_comment_extra_ids, b.new_status_extra_id, b.new_comment_extra_id
     FROM public.missed_restriction_status_backup b
     JOIN bk_txn_extra ns ON ns.extra_id = b.new_status_extra_id AND ns.is_active
+    JOIN bk_txn_extra nc ON nc.extra_id = b.new_comment_extra_id AND nc.is_active
     WHERE b.rolled_back_at IS NULL),
-reactivated AS (UPDATE bk_txn_extra e SET is_active = true FROM target t WHERE e.extra_id = t.old_extra_id), -- old status back
-removed AS (DELETE FROM bk_txn_extra e USING target t
-            WHERE e.extra_id IN (t.new_status_extra_id, t.new_comment_extra_id)) -- rows added by 05
+reactivated AS ( -- old status and comments back
+    UPDATE bk_txn_extra e SET is_active = true
+    FROM target t
+    WHERE e.extra_id = t.old_extra_id OR e.extra_id = ANY (t.old_comment_extra_ids)),
+removed AS ( -- rows added by 05
+    DELETE FROM bk_txn_extra e USING target t
+    WHERE e.extra_id IN (t.new_status_extra_id, t.new_comment_extra_id))
 UPDATE public.missed_restriction_status_backup b
 SET rolled_back_at = now()
 FROM target t

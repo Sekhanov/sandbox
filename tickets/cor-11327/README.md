@@ -15,7 +15,7 @@ Run them in this order, once per client. Each script uses the files made by the 
 | `02` | SMA | Which of them changed their ID, and which shares carry the other ID? | `restrictions.json` | `security_hist_entity.json` |
 | `03` | Central | Which rules does the client use (lists that block a trade, status they set)? | `--client` | `client_rules.json` |
 | `04` | Client | Which trades in those shares were approved by mistake before the fix? Shows the correct status, and `remediable` (safe to fix) or `review_reason` (a person decides). Changes nothing. | files from `01`, `02`, `03`, `--fix-date` | `candidates.json` |
-| `05` | Client | Fix: set the correct status on every `remediable` trade from `04`. Saves the old status. | `candidates.json` | result on screen |
+| `05` | Client | Fix: set the correct status and a comment on every `remediable` trade from `04`. Saves the old status and comments. | `candidates.json` | result on screen |
 | `06` | Client | Undo `05`. | backup from `05` | result on screen |
 
 `05` and `06` change nothing unless you add `--commit`.
@@ -45,7 +45,7 @@ Undo: `npm run 06`, then `npm run 06 -- --commit`, then the cache refresh.
 
 ```sql
 CREATE TABLE public.missed_restriction_status_backup (
-    transaction_id text NOT NULL, old_extra_id int NOT NULL, old_status text, new_status text NOT NULL,
+    transaction_id text NOT NULL, old_extra_id int NOT NULL, old_comment_extra_ids int[] NOT NULL, old_status text, new_status text NOT NULL,
     new_status_extra_id int NOT NULL, new_comment_extra_id int NOT NULL,
     applied_at timestamptz NOT NULL DEFAULT now(), rolled_back_at timestamptz
 );
