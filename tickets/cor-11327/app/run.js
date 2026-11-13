@@ -9,10 +9,10 @@ import { stringify } from 'csv-stringify/sync';
 // output file (all result rows; single: only the value of the first row and column).
 const SCRIPTS = {
   '00': { db: 'RDS' },
-  '01': { db: 'CLIENT_DB', output: 'restricted_cids.json' },
-  '02': { db: 'RDS', inputs: ['restricted_cids.json'], output: 'security_hist_entity.json' },
+  '01': { db: 'CLIENT_DB', output: 'restrictions.json' },
+  '02': { db: 'RDS', inputs: ['restrictions.json'], output: 'security_hist_entity.json' },
   '03': { db: 'DB', required: ['client'], output: 'client_rules.json', single: true },
-  '04': { db: 'CLIENT_DB', required: ['fix-date'], inputs: ['client_rules.json', 'security_hist_entity.json'], output: 'candidates.json' },
+  '04': { db: 'CLIENT_DB', required: ['fix-date'], inputs: ['client_rules.json', 'restrictions.json', 'security_hist_entity.json'], output: 'candidates.json' },
   '05': { db: 'CLIENT_DB', inputs: ['candidates.json'] },
   '06': { db: 'CLIENT_DB' },
 };

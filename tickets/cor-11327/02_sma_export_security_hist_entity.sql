@@ -1,4 +1,4 @@
--- SMA, read-only. Input: restricted_cids.json. Output: security_hist_entity.json (for 04).
+-- SMA, read-only. Input: restrictions.json (01). Output: security_hist_entity.json (for 04).
 -- Securities whose CID differs from the restriction's CID because FactSet changed the company's CID (A1 -> B2).
 -- The engine searched restrictions only by the security's CID, so it missed the restriction.
 -- Result columns:
@@ -6,7 +6,7 @@
 --   restricted_cid - CID stored on the restriction
 --   security_cid   - CID of the security in SMA; the engine searched by this one
 --   merge_date     - date of the CID change
-WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('missed_restriction.restricted_cids')::jsonb) AS x(cid text)),
+WITH restricted AS (SELECT DISTINCT cid FROM jsonb_to_recordset(current_setting('missed_restriction.restrictions')::jsonb) AS x(cid text)),
 pairs AS (
     -- the restriction has the old CID (A1), the security now has the new CID (B2)
     SELECT merged_factset_entity_id AS restricted_cid, to_factset_entity_id AS security_cid, merge_date

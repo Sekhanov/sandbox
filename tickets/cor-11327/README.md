@@ -11,10 +11,10 @@ Run them in this order, once per client. Each script uses the files made by the 
 | Step | Database | Question it answers | Uses | Makes |
 |---|---|---|---|---|
 | `00` | SMA | Did any company change its ID more than once (`A1` → `B2` → `C3`)? Must be 0: only one change is handled. | — | count on screen |
-| `01` | Client | Which companies did the client ever restrict (including edited and deleted restrictions)? | — | `restricted_cids.json` |
-| `02` | SMA | Which of them changed their ID, and which shares carry the other ID? | `restricted_cids.json` | `security_hist_entity.json` |
+| `01` | Client | Which companies did the client ever restrict (including edited and deleted restrictions)? | — | `restrictions.json` |
+| `02` | SMA | Which of them changed their ID, and which shares carry the other ID? | `restrictions.json` | `security_hist_entity.json` |
 | `03` | Central | Which rules does the client use (lists that block a trade, status they set)? | `--client` | `client_rules.json` |
-| `04` | Client | Which trades in those shares were approved by mistake before the fix? Shows the correct status, and `remediable` (safe to fix) or `review_reason` (a person decides). Changes nothing. | files from `02`, `03`, `--fix-date` | `candidates.json` |
+| `04` | Client | Which trades in those shares were approved by mistake before the fix? Shows the correct status, and `remediable` (safe to fix) or `review_reason` (a person decides). Changes nothing. | files from `01`, `02`, `03`, `--fix-date` | `candidates.json` |
 | `05` | Client | Fix: set the correct status on every `remediable` trade from `04`. Saves the old status. | `candidates.json` | result on screen |
 | `06` | Client | Undo `05`. | backup from `05` | result on screen |
 
@@ -66,18 +66,18 @@ A trade is listed when all of these hold:
 
 Per trade, only the first such rule counts (the engine stops at the first rule with an action). Its `IN` status is `proposed_status`.
 
-`remediable = true` when `proposed_status` is set, differs from `current_status`, and there is no `review_reason`:
+`remediable = true` when there is no `review_reason` and `proposed_status` differs from `current_status`:
 
 | `review_reason` | Why `04` cannot be sure |
 |---|---|
-| `employee_filter` | The rule has `ATTRIBUTE_TYPE` or `AUTH0_CHECK_RULE`. |
+| `employee_filter` | The rule has `ATTRIBUTE_TYPE` (employee attributes from that time are unknown). |
 | `preclear_linked` | The trade is linked to a preclear or is `Matched`. |
 | `status_changed_by_user` | More than one `STATUS` row: someone changed it after processing. |
 | `pending_match_action` | The rule sets Pending Match; preclear matching would decide the final status. |
 | `sic_rules` | The client has SIC rules, which can overwrite the status. |
 | `not_in_rule` | An allow-list rule fired wrongly; the correct status is unknown. |
 | `deleted_restriction` | The restriction was deleted; its end date is unknown. |
-| `trade_before_merge` | Trade before the CID change: the engine checked the old CID, not `security_cid`. |
+| `processed_before_merge` | Processed before the CID change: the security may still have had the restricted CID. |
 
 ## Known limits
 
