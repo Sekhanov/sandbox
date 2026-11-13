@@ -6,22 +6,21 @@
 --   restricted_cid - CID stored on the restriction
 --   security_cid   - CID of the security in SMA; the engine searched by this one
 --   merge_date     - date of the CID change
-WITH restricted AS (SELECT cid
-                    FROM jsonb_to_recordset(current_setting('missed_restriction.restricted_cids')::jsonb) AS x(cid text)),
-     pairs AS (
-         -- the restriction has the old CID (A1), the security now has the new CID (B2)
-         SELECT merged_factset_entity_id AS restricted_cid, to_factset_entity_id AS security_cid, merge_date
-         FROM sym_merged_entity_id
-         WHERE merged_factset_entity_id IN (SELECT cid FROM restricted)
-         UNION
-         -- the restriction has the new CID (B2), the security still has the old CID (A1)
-         SELECT to_factset_entity_id, merged_factset_entity_id, merge_date
-         FROM sym_merged_entity_id
-         WHERE to_factset_entity_id IN (SELECT cid FROM restricted))
+WITH restricted AS (SELECT cid FROM jsonb_to_recordset(current_setting('missed_restriction.restricted_cids')::jsonb) AS x(cid text)),
+pairs AS (
+    -- the restriction has the old CID (A1), the security now has the new CID (B2)
+    SELECT merged_factset_entity_id AS restricted_cid, to_factset_entity_id AS security_cid, merge_date
+    FROM sym_merged_entity_id
+    WHERE merged_factset_entity_id IN (SELECT cid FROM restricted)
+    UNION
+    -- the restriction has the new CID (B2), the security still has the old CID (A1)
+    SELECT to_factset_entity_id, merged_factset_entity_id, merge_date
+    FROM sym_merged_entity_id
+    WHERE to_factset_entity_id IN (SELECT cid FROM restricted))
 SELECT s.fsym_id AS security_id, p.*
 FROM pairs p
-         JOIN all_securities s ON s.entity_id = p.security_cid
+JOIN all_securities s ON s.entity_id = p.security_cid
 UNION
 SELECT s.security_id, p.*
 FROM pairs p
-         JOIN security_info s ON s.cid = p.security_cid;
+JOIN security_info s ON s.cid = p.security_cid;

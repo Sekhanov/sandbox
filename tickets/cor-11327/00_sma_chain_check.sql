@@ -5,7 +5,6 @@
 --   chained_changes - number of ID changes whose new ID was changed again
 SELECT count(*) AS chained_changes
 FROM sym_merged_entity_id a
-         JOIN sym_merged_entity_id b
-              ON b.merged_factset_entity_id = a.to_factset_entity_id -- a's new ID was changed again by b
+JOIN sym_merged_entity_id b ON b.merged_factset_entity_id = a.to_factset_entity_id -- a's new ID was changed again by b
 WHERE a.merged_factset_entity_id <> a.to_factset_entity_id -- ignore rows where old = new
   AND b.merged_factset_entity_id <> b.to_factset_entity_id;
