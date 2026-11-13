@@ -81,7 +81,6 @@ Per trade, only the first such rule counts (the engine stops at the first rule w
 
 ## Known limits
 
-- Chains of ID changes are not covered (step `00`).
 - `04` uses today's rules: there is no history of which rule version was active when.
 - Deleted restrictions have no deletion date, so their trades always go to review.
 
