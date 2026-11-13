@@ -321,6 +321,7 @@ Example: `{"LIST_NAME": ["Restricted List"], "ACTION": {"IN": "PENDING_MATCH_STA
   `|COOK_DATA:true|MANAGED_ACCT:false|…|RESTRICTION_CHECK_1: true (On Restricted List)|SIC_CHECK:false|OWNER_MATCH:1|MATCHING_RESULTS:true`
   `RESTRICTION_CHECK_<n>`: rule number; `true`/`false` = action taken; `(On <lists>)` / `(Not on <lists>)` / `(AUTH0_FALSE)`.
 - Matched preclear → `bk_txn_extra` row `MATCHING_PRE_CLEAR_ID`.
+- Dates of these rows: `created_date` = trade date, `modified_date` = processing time (`service.ts:706-707`).
 
 ### 6.3 Save (`loadToTarget`)
 

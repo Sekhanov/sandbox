@@ -52,7 +52,7 @@ WITH cfg
                 h.restricted_cid,
                 h.merge_date::date                                                                AS merge_date,
                 rs.attribute_value                                                                AS rule_status,
-                rs.created_date                                                                   AS processed_at,
+                rs.modified_date                                                                  AS processed_at, -- created_date is the trade date
                 (SELECT min(f[1]::int)
                  FROM regexp_matches(rs.attribute_value, 'RESTRICTION_CHECK_(\d+): true', 'g') f) AS first_fired_rule
          FROM bk_txn_extra sec
@@ -60,7 +60,7 @@ WITH cfg
                   JOIN bk_txn_extra rs ON rs.transaction_id = sec.transaction_id AND rs.is_active IS NOT FALSE
              AND rs.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'RULE_STATUS')
              AND rs.attribute_value LIKE '%RESTRICTION_CHECK_%'
-             AND rs.created_date < current_setting('missed_restriction.fix_date')::date
+             AND rs.modified_date < current_setting('missed_restriction.fix_date')::date
                   JOIN bk_txn bt ON bt.transaction_id = sec.transaction_id
          WHERE sec.extra_type_id IN (SELECT extra_type_id FROM txn_type WHERE attribute_type = 'SECURITY_ID')
            AND sec.is_active IS NOT FALSE),
